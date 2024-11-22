@@ -1,67 +1,56 @@
-import BlueberryImage from "../assets/HomePage/anasfgrsl1.png";
-import FarmImage from "../assets/HomePage/anasfgrsl2.png";
-import OrganicIcon from "../assets/HomePage/organıkıcon.png";
-import LocalProductionIcon from "../assets/HomePage/yerlıuretımıcon.png";
-import HealthyIcon from "../assets/HomePage/saglıklııcon.png";
-import Dogal from "../assets/HomePage/%100dogal.png";
+import BlueberryImage from "../assets/HomePage/anasayfa1.jpg";
+import OrganicIcon from "../assets/HomePage/anasayfa3.jpg";
+import LocalProductionIcon from "../assets/HomePage/anasayfa4.jpg";
+import HealthyIcon from "../assets/HomePage/anasayfa5.jpg";
 
 const HomePage = () => {
   return (
-    <div className="bg-white h-screen">
-      <section className="relative h-1/2 flex flex-col items-center justify-center text-center">
+    <div className="min-h-full bg-white">
+      <section className="relative top-0">
         <img
           src={BlueberryImage}
-          alt="Blueberry"
-          className="absolute w-full h-full object-cover"
+          alt="Blueberries"
+          className="w-full object-cover h-screen" 
+          style={{ marginTop: 0, paddingTop: 0 }}
         />
-        <div className="relative p-8 rounded-md max-w-3xl z-10">
-          <h1 className="text-4xl sm:text-6xl font-bold text-blue-800 leading-snug">
-            “Beslenmenizde tek bir değişiklik yapacaksanız,<br />
-            o da yaban mersini eklemek olmalı.”
-          </h1>
-          <img src={Dogal} alt="Doğal"  />
+      </section>
+
+      {/* Middle Section */}
+      <section className="relative">
+        <img src={FarmImage} alt="Farm" className="w-full object-cover h-96" />
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
+          <h2 className="text-4xl sm:text-5xl font-bold">
+            “75 dekarlık tarlalarımızda blueberry'lerimizi sizler için üretiyoruz.”
+          </h2>
         </div>
       </section>
 
-      <section className="relative h-1/2 bg-white">
-        <div
-          className="absolute inset-x-0 top-0 -mt-12 h-20 bg-white z-10"
-          style={{
-            clipPath: "ellipse(150% 90% at 50% 0%)",
-          }}
-        ></div>
-        <img src={FarmImage} alt="Farm" className="w-full h-96 object-cover" />
-        <div className="relative text-center -mt-16 z-10">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-            “75 dekarlık tarlalarımızda blueberry'lerimizi sizler için
-            üretiyoruz.”
-          </h2>
+      {/* Icon Section */}
+      <section className="py-8">
+        <div className="container mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+          {/* Organic */}
+          <div className="flex flex-col items-center">
+            <img src={OrganicIcon} alt="Organik" className="w-32 h-32" />
+            <p className="text-lg font-bold mt-4">ORGANİK</p>
+          </div>
+          {/* Local Production */}
+          <div className="flex flex-col items-center">
+            <img src={LocalProductionIcon} alt="Yerli Üretim" className="w-32 h-32" />
+            <p className="text-lg font-bold mt-4">YERLİ ÜRETİM</p>
+          </div>
+          {/* Healthy */}
+          <div className="flex flex-col items-center">
+            <img src={HealthyIcon} alt="Sağlıklı" className="w-32 h-32" />
+            <p className="text-lg font-bold mt-4">SAĞLIKLI</p>
+          </div>
         </div>
+      </section>
 
-        {/* İkonlar */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-8 text-center">
-          <div className="flex flex-col items-center">
-            <img src={OrganicIcon} alt="Organik" className="w-40 h-40" />
-            <span className="text-xl font-bold text-gray-700 mt-4">
-              ORGANİK
-            </span>
-          </div>
-          <div className="flex flex-col items-center">
-            <img
-              src={LocalProductionIcon}
-              alt="Yerli Üretim"
-              className="w-40 h-40"
-            />
-            <span className="text-xl font-bold text-gray-700 mt-4">
-              YERLİ ÜRETİM
-            </span>
-          </div>
-          <div className="flex flex-col items-center">
-            <img src={HealthyIcon} alt="Sağlıklı" className="w-40 h-40" />
-            <span className="text-xl font-bold text-gray-700 mt-4">
-              SAĞLIKLI
-            </span>
-          </div>
+      {/* Footer Recipe Section */}
+      <section className="py-8 bg-gray-100">
+        <div className="container mx-auto text-center">
+          <h3 className="text-3xl font-bold mb-6">Tarifler</h3>
+          <p>Here you can add additional recipe cards or images for the "Tarifler" section as needed.</p>
         </div>
       </section>
     </div>

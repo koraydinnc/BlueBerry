@@ -1,12 +1,17 @@
+import React from 'react';
+import { Layout } from 'antd';
 import Header from '../components/Header';
 
-const MainLayout = ({ children }) => {
-  return (
-    <div>
-      <Header />
-      <div className='h-screen'>{children}</div>
-    </div>
-  );
-};
+const { Footer, Content } = Layout;
 
-export default MainLayout;
+
+
+
+const App = ({ children }) => (
+  <Layout>
+    <Header >Header</Header>
+    <Content>{children}</Content>
+  </Layout>
+);
+
+export default App;

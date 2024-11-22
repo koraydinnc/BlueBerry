@@ -7,7 +7,9 @@ export default {
     extend: {
       fontFamily: {
         roboto: ['Roboto', 'sans-serif'],
-            },
+        hussar: ['HussarPrint', 'sans-serif'], 
+        hussarB: ['HussarPrintB', 'sans-serif']
+      },
       animation: {
         'slide-up': 'slideUp 0.5s ease-out',
       },
