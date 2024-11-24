@@ -9,43 +9,103 @@ import { Col, Row, Image } from 'antd';
 
 const Tarifler = () => {
   return (
-    <Row className="tarifler-container" gutter={[16, 16]}>
-      {/* Banner */}
-      <Col xs={24} className="relative top-banner">
-        <Image className="top-image object-cover" style={{ width: '100vw', height: '50vh' }} src={Tarif1} alt="Blueberry Tarifleri" preview={false} />
-        <div className="banner-title">Blueberry Tarifleri</div>
-      </Col>
+    <div>
+      {/* SEO Meta Tags */}
+      <head>
+        <title>Blueberry Tarifleri | Lezzetli ve Sağlıklı Tarifler</title>
+        <meta
+          name="description"
+          content="Blueberry ile hazırlanan lezzetli ve sağlıklı tarifler: Smoothie, Muffin, Cheesecake ve Panna Cotta gibi tarifleri keşfedin."
+        />
+        <meta
+          name="keywords"
+          content="blueberry tarifleri, smoothie tarifleri, muffin tarifleri, cheesecake tarifleri, panna cotta tarifleri, sağlıklı tarifler"
+        />
+        <meta name="author" content="Blueberry Tarifi Ekibi" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </head>
 
-      {/* Smoothie */}
-      <Col xs={24} md={12}>
-        <div className="tarif-card-left">
-          <Image className="image-full" src={Tarif2} alt="Smoothie" preview={false} />
-          <h2 className="tarif-title">Smoothie</h2>
-        </div>
-      </Col>
+      <Row className="tarifler-container" gutter={[16, 16]}>
+        {/* Banner */}
+        <Col xs={24} className="relative top-banner">
+          <Image
+            className="top-image object-cover"
+            style={{ width: '100vw', height: '50vh' }}
+            src={Tarif1}
+            alt="Blueberry Tarifleri Banner"
+            preview={false}
+          />
+          <h1 className="banner-title-left font-hussar">
+            Blueberry Tarifleri
+          </h1>
+        </Col>
 
-      {/* Muffin */}
-      <Col xs={24} md={12}>
-        <div className="tarif-card-right">
-          <Image className="image-full" src={Tarif3} alt="Muffin" preview={false} />
-          <h2 className="tarif-title">Muffin</h2>
-        </div>
-      </Col>
+        {/* Tarif Kartları */}
+        <Col xs={24} md={12}>
+          <div className="tarif-card-container">
+            <Image
+              className="image-full rounded-lg"
+              src={Tarif2}
+              alt="Blueberry Smoothie Tarifi"
+              preview={false}
+              style={{ width: '100vw', height: '300px', objectFit: 'cover' }}
+            />
+            <div className="overlay">
+              <h2 className="tarif-title">Smoothie</h2>
+              <p className="tarif-info">Blueberry ile hazırlanan ferahlatıcı bir smoothie tarifi.</p>
+            </div>
+          </div>
+        </Col>
 
-      {/* Cheesecake */}
-      <Col xs={24} md={12}>
-        <div className="tarif-card" style={{ backgroundImage: `url(${Tarif4})` }}>
-          <h2 className="tarif-title">Cheesecake</h2>
-        </div>
-      </Col>
+        <Col xs={24} md={12}>
+          <div className="tarif-card-container">
+            <Image
+              className="image-full rounded-lg"
+              src={Tarif3}
+              alt="Blueberry Muffin Tarifi"
+              preview={false}
+              style={{ width: '100vw', height: '300px', objectFit: 'cover' }}
+            />
+            <div className="overlay">
+              <h2 className="tarif-title">Muffin</h2>
+              <p className="tarif-info">Yumuşacık blueberry muffin tarifimizi keşfedin.</p>
+            </div>
+          </div>
+        </Col>
 
-      {/* Panna Cotta */}
-      <Col xs={24} md={12}>
-        <div className="tarif-card" style={{ backgroundImage: `url(${Tarif5})` }}>
-          <h2 className="tarif-title">Panna Cotta</h2>
-        </div>
-      </Col>
-    </Row>
+        <Col xs={24} md={12}>
+          <div className="tarif-card-container">
+            <Image
+              className="image-full rounded-lg"
+              src={Tarif4}
+              alt="Blueberry Cheesecake Tarifi"
+              preview={false}
+              style={{ width: '100vw', height: '300px', objectFit: 'cover' }}
+            />
+            <div className="overlay">
+              <h2 className="tarif-title">Cheesecake</h2>
+              <p className="tarif-info">Blueberry sosuyla enfes cheesecake tarifimizi deneyin.</p>
+            </div>
+          </div>
+        </Col>
+
+        <Col xs={24} md={12}>
+          <div className="tarif-card-container">
+            <Image
+              className="image-full rounded-lg"
+              src={Tarif5}
+              alt="Blueberry Panna Cotta Tarifi"
+              preview={false}
+              style={{ width: '100vw', height: '300px', objectFit: 'cover' }}
+            />
+            <div className="overlay">
+              <h2 className="tarif-title">Panna Cotta</h2>
+              <p className="tarif-info">Blueberry ile hazırlanmış hafif bir tatlı: Panna Cotta.</p>
+            </div>
+          </div>
+        </Col>
+      </Row>
+    </div>
   );
 };
 

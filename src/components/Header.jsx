@@ -1,4 +1,4 @@
-import { Button, Col, Row, Dropdown, Menu } from 'antd';
+import { Button, Col, Row, Dropdown, Menu, Tooltip } from 'antd';
 import { motion } from 'framer-motion';
 import Logo from '../assets/Logo.png';
 import ButtonBG from '../assets/HomePage/ButtonBG.png';
@@ -51,33 +51,58 @@ const Header = () => {
           </Dropdown>
 
           <motion.ul
-            className="hidden sm:flex space-x-4 md:space-x-6 lg:space-x-8 text-blue-600 font-hussar font-semibold text-sm sm:text-base md:text-lg"
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: { opacity: 0 },
-              visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
-            }}
+  className="hidden sm:flex space-x-4 md:space-x-6 lg:space-x-8 text-blue-600 font-hussar font-semibold text-sm sm:text-base md:text-lg"
+  initial="hidden"
+  animate="visible"
+  variants={{
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
+  }}
+>
+  {['Hikayemiz', 'Blueberry', 'Ürünlerimiz', 'Faydaları', 'Tarifler'].map((item, index) => (
+    <motion.li
+      key={index}
+      className="relative cursor-pointer"
+      whileHover={{ scale: 1.1 }}
+      variants={{
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0 },
+      }}
+    >
+      {item === 'Ürünlerimiz' ? (
+        <Tooltip
+          title={
+            <div style={{ textAlign: 'left', lineHeight: '1.5' }}>
+              <p>Taze Blueberry</p>
+              <p>Dondurulmuş Blueberry</p>
+            </div>
+          }
+          placement="bottom"
+          overlayInnerStyle={{
+            backgroundColor: '#7EB426',
+            color: 'white',
+            borderRadius: '8px',
+            padding: '10px',
+          }}
+        >
+          <a
+            className="hover:text-blue-800 font-hussar font-bold flex items-center"
           >
-            {['Hikayemiz', 'Blueberry', 'Ürünlerimiz', 'Faydaları', 'Tarifler'].map((item, index) => (
-              <motion.li
-                key={index}
-                className="relative cursor-pointer"
-                whileHover={{ scale: 1.1 }}
-                variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  visible: { opacity: 1, y: 0 },
-                }}
-              >
-                <a
-                  href={`/${item.toLowerCase()}`}
-                  className="hover:text-blue-800 font-hussar font-bold"
-                >
-                  {item}
-                </a>
-              </motion.li>
-            ))}
-          </motion.ul>
+            {item} <DownOutlined className="ml-1" />
+          </a>
+        </Tooltip>
+      ) : (
+        <a
+          href={`/${item.toLowerCase()}`}
+          className="hover:text-blue-800 font-hussar font-bold"
+        >
+          {item}
+        </a>
+      )}
+    </motion.li>
+  ))}
+</motion.ul>
+
         </Col>
 
         <Col xs={8} sm={6} md={6} className="flex justify-end">
