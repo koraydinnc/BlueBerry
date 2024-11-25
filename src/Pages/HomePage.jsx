@@ -1,17 +1,15 @@
 import { Col, Image, Row, Typography } from "antd";
 import { Helmet } from "react-helmet";
-import Tarif1 from "../assets/HomePage/anasayfa1.jpg";
-import Tarif2 from "../assets/HomePage/anasayfa3.jpg";
-import Tarif3 from "../assets/HomePage/anasayfa4.jpg";
-import AltFotograf from "../assets/HomePage/foto2.png";
-import UstFotograf from "../assets/HomePage/anasffoto1.png";
+import anasayfatarif from '../assets/HomePage/anasayfatarif.png'
+import AltFotograf from "../assets/HomePage/anasayfa2.png";
+import UstFotograf from "../assets/HomePage/anasayfa11.jpg";
 import Organik from "../assets/HomePage/organıkıcon.png";
 import Yerli from "../assets/HomePage/yerlıuretımıcon.png";
 import Saglik from "../assets/HomePage/saglıklııcon.png";
 import Dogal from "../assets/HomePage/dogal.png";
-import "./HomePage.css";
-import ButtonBG from "../assets/HomePage/ButtonBG.png";
+import ButtonBG from "../assets/tarıfler.png";
 import { useNavigate } from "react-router-dom";
+import "./HomePage.css";
 
 const { Title, Text } = Typography;
 
@@ -19,7 +17,7 @@ const HomePage = () => {
   const navigate = useNavigate();
 
   return (
-    <>
+    <div className="bg-white">
       <Helmet>
         <title>Organik Yaban Mersini Ürünleri ve Sağlıklı Tarifler</title>
         <meta
@@ -45,220 +43,120 @@ const HomePage = () => {
         <meta property="og:type" content="website" />
       </Helmet>
 
-      <div>
       <Row>
-  <Col span={24}>
+        <Col span={24}>
+          <Image
+            preview={false}
+            src={UstFotograf}
+            className="w-full h-[50vh] lg:h-[55vh] object-cover"
+            alt="Blueberry"
+          />
+        </Col>
+      </Row>
+
+      <Row justify="center" align="middle" className="text-center py-8 px-4">
+        <Col span={24}>
+          <Title
+          style={{color:'#1D6DB4'}}
+            className="font-extrabold font-hussar bg-white text-blue-600 text-xl lg:text-2xl"
+            level={1}
+          >
+            “Beslenmenizde tek bir değişiklik yapacaksanız, o da yaban mersini
+            eklemek olmalı.”
+          </Title>
+        </Col>
+      </Row>
+
+      <Row>
+  <Col span={24} style={{ position: "relative" }}>
+    <div className="flex justify-center mb-8">
+      <Image
+        src={Dogal}
+        preview={false}
+        className="max-w-xs lg:max-w-md"
+        alt="Doğal"
+      />
+    </div>
     <Image
       preview={false}
-      src={UstFotograf}
-      style={{
-        minWidth:'100vw'
-        ,
-        maxHeight:'35vh'
-      }}
-      className="w-screen h-[50vh] lg:h-[40vh] "
+      src={AltFotograf}
+      style={{minWidth:'100vw'}}
+      className=" h-[25vh] lg:h-[40vh] object-cover brightness-50"
       alt="Blueberry"
+    />
+    {/* "75 Dekar" Yazısı */}
+    <div className="absolute inset-0 flex justify-center items-center mb-32 lg:mb-48 text-white">
+      <Text
+        className="font-extrabold font-hussar text-3xl lg:text-3xl"
+        style={{ color: "#FFF", textShadow: "2px 2px 6px rgba(0, 0, 0, 0.7)" }}
+      >
+          “75 dekar tarlalarımızda blueberry'lerimizi sizler için üretiyoruz.”
+          </Text>
+    </div>
+
+    <Row
+      justify="space-around"
+      align="middle"
+      className="absolute top-1/2 left-0 w-full transform -translate-y-1/2 z-10 text-white"
+    >
+      <Col span={24} className="text-center m-12">
+        <Text className="font-semibold font-hussar text-2xl lg:text-4xl px-8 text-white">
+        </Text>
+      </Col>
+      {[
+        { img: Organik, label: "Organik" },
+        { img: Yerli, label: "Yerli Üretim" },
+        { img: Saglik, label: "Sağlıklı" },
+      ].map((feature, index) => (
+        <Col
+          xs={8}
+          sm={6}
+          md={4}
+          key={index}
+          className="text-center flex flex-col items-center"
+        >
+          <Image
+            preview={false}
+            src={feature.img}
+            className="max-w-[100px] lg:max-w-[140px] h-auto"
+            alt={feature.label}
+          />
+          <Text className="font-extrabold font-hussar mt-2 text-lg lg:text-xl text-white">
+            {feature.label}
+          </Text>
+        </Col>
+      ))}
+    </Row>
+  </Col>
+</Row>
+
+
+      
+<Row
+  className="py-8 px-4 cursor-pointer"
+  justify="center"
+  gutter={[16, 16]}
+  style={{ marginTop: "20px", minWidth:'100vw' }}
+>
+  <Col className="relative" span={24}>
+    <Image
+      onClick={() => navigate('/tarifler')}
+      src={anasayfatarif}
+      style={{minWidth:'100vw'}}
+      className="max-h-[300px] lg:max-h-[600px] object-cover " // Maksimum yüksekliği ayarladık
+    />
+  </Col>
+  <Col className="absolute cursor-pointer">
+    <Image
+      preview={false}
+      onClick={() => navigate('/tarifler')}
+      className="max-w-80 lg:max-w-96 mt-24"
+      src={ButtonBG}
     />
   </Col>
 </Row>
 
-
-
-
-        <Row
-  justify="center"
-  align="middle"
-  style={{
-    textAlign: "center",
-    margin: "20px 0",
-    padding: "0 15px", 
-  }}
->
-  <Col span={24}>
-    <Title
-      className="font-extrabold font-hussar"
-      level={2}
-      style={{
-        color: "#004aad",
-        wordWrap: "break-word", 
-      }}
-    >
-      “Beslenmenizde tek bir değişiklik yapacaksanız, o da yaban mersini eklemek
-      olmalı.”
-    </Title>
-  </Col>
-</Row>
-
-
-        <Row>
-          <Col span={24} style={{ position: "relative" }}>
-             <Col span={24} className="flex justify-center ">
-             <Image
-              src={Dogal}
-              className="justify-center items-center"
-              style={{
-                 maxWidth:'320px',
-              }}
-              alt="Doğal"
-            />
-             </Col>
-
-            <Image
-               preview={false}
-               className="w-screen  h-[50vh] lg:h-[40vh]"
-               src={AltFotograf}
-               style={{
-                minWidth:'100vw'
-                ,
-                maxHeight:'35vh'
-              }}
-              alt="Blueberry"
-            />
-
-      
-
-            <Row
-              justify="space-around"
-              align="middle"
-              style={{
-                position: "absolute",
-                top: "50%",
-                left: 0,
-                width: "100%",
-                transform: "translateY(-50%)",
-                zIndex: 1,
-              }}
-            >
-              <Col span={24} className="top-14">
-    <Text
-      
-      style={{
-        color: "white",
-        textAlign: "center", 
-        margin: "0 auto", 
-        display: "block", 
-      }}
-      className="font-extrabold font-hussar text-3xl p-12"
-    >
-      “75 dekar tarlalarımızda blueberry'lerimizi sizler için üretiyoruz.”
-    </Text>
-  </Col>
-
-              <Col className="top-12" xs={6} sm={4} md={3} style={{ textAlign: "center" }}>
-                <Image
-                  src={Organik}
-                  preview={false}
-                  style={{
-                    width: "100%",
-                    maxWidth: "120px",
-                    height: "16vh",
-                  }}
-                  alt="Organik"
-                />
-                <Text
-                  className="flex  justify-center font-extrabold font-hussar text-nowrap"
-                  style={{
-                    color: "white",
-                    fontWeight: "bold",
-                    fontSize: "clamp(1.2rem, 1vw, 1.2rem)",
-                  }}
-                >
-                  Organik
-                </Text>
-              </Col>
-
-              <Col className="top-12" xs={6} sm={4} md={3} style={{ textAlign: "center" }}>
-                <Image
-                                  preview={false}
-                  src={Yerli}
-                  style={{
-                    width: "100%",
-                    maxWidth: "160px",
-                    height: "17vh",
-                  }}
-                  alt="Yerli Üretim"
-                />
-                <Text
-                  className="flex mb-6  justify-center font-extrabold font-hussar text-nowrap"
-                  style={{
-                    color: "white",
-                    fontSize: "clamp(1.2rem, 1vw, 1rem)",
-                  }}
-                >
-                  Yerli Üretim
-                </Text>
-              </Col>
-
-              <Col className="top-12" xs={6} sm={4} md={3} style={{ textAlign: "center" }}>
-                <Image
-                                  preview={false}
-                  src={Saglik}
-                  style={{
-                    width: "100%",
-                    maxWidth: "140px",
-                    height: "15vh",
-
-                  }}
-                  alt="Sağlıklı"
-                />
-                <Text
-                  className="flex  justify-center font-extrabold font-hussar text-nowrap"
-                  style={{
-                    color: "white",
-                    fontWeight: "bold",
-                    fontSize: "clamp(1.2rem, 1vw, 1.2rem)",
-                  }}
-                >
-                  Sağlıklı
-                </Text>
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-
-        <Row
-          className="relative"
-          justify="center"
-          gutter={[16, 16]}
-          style={{ marginTop: "20px" }}
-        >
-          {[
-            { img: Tarif1, text: "Muffin Tarifine Git" },
-            { img: Tarif2, text: "Smoothie Tarifine Git" },
-            { img: Tarif3, text: "Cheesecake Tarifine Git" },
-          ].map((tarif, index) => (
-            <Col xs={24} md={8} key={index} className="">
-              <div
-                className="tarif-container"
-                onClick={() => navigate("/tarifler")}
-              >
-                <Image
-                  src={tarif.img}
-                  alt={tarif.text}
-                  preview={false}
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                  }}
-                />
-                <div className="hover-text font-hussarB font-bold">
-                  {tarif.text}
-                </div>
-              </div>
-            </Col>
-          ))}
-
-          <button
-            onClick={() => navigate("/tarifler")}
-            type="button"
-            className="top-40 my-auto mx-auto bg-cover absolute bg-center bg-no-repeat text-white font-hussar font-bold px-4 py-2 rounded-lg hover:brightness-90 sm:px-6 sm:py-3"
-            style={{ backgroundImage: `url(${ButtonBG})` }}
-          >
-            <p>Tarifler</p>
-          </button>
-        </Row>
-      </div>
-    </>
+    </div>
   );
 };
 

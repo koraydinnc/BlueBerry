@@ -10,7 +10,7 @@ const { Footer, Content } = Layout;
 const App = ({ children }) => (
   <Layout>
     <Header >Header</Header>
-    <Content>{children}</Content>
+    <Content style={{backgroundColor:'#fff'}}>{children}</Content>
   </Layout>
 );
 

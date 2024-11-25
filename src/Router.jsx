@@ -4,6 +4,7 @@ import HomePage from "./Pages/HomePage";
 import ProductsPage from "./Pages/ProductsPage";
 import StoryPage from "./Pages/StoryPage";
 import Tarifler from "./Pages/Tarifler";
+import Zaman from "./Pages/Zaman";
 
 export const MainRouter = [
     {
@@ -34,6 +35,11 @@ export const MainRouter = [
     {
         path:'/hikayemiz',
         component: StoryPage,
+        exact:true
+    },
+    {
+        path:'/zaman-çizelgemiz',
+        component: Zaman,
         exact:true
     }
 ]
