@@ -84,7 +84,6 @@ const HomePage = () => {
       className=" h-[25vh] lg:h-[40vh] object-cover brightness-50"
       alt="Blueberry"
     />
-    {/* "75 Dekar" Yazısı */}
     <div className="absolute inset-0 flex justify-center items-center mb-32 lg:mb-48 text-white">
       <Text
         className="font-extrabold font-hussar text-3xl lg:text-3xl"
@@ -143,7 +142,7 @@ const HomePage = () => {
       onClick={() => navigate('/tarifler')}
       src={anasayfatarif}
       style={{minWidth:'100vw'}}
-      className="max-h-[300px] lg:max-h-[600px] object-cover " // Maksimum yüksekliği ayarladık
+      className="max-h-[300px] lg:max-h-[600px] object-cover "
     />
   </Col>
   <Col className="absolute cursor-pointer">
