@@ -115,13 +115,21 @@ const HomePage = () => {
       ))}
     </Row>
 
-    <Row justify="center" className="absolute bottom-20 w-full transform translate-y-10 z-10 text-white">
-      <Col span={24} className="text-center">
-        <Text className="font-semibold font-hussar text-xl lg:text-xl   text-white">
-          "75 dekarlık tarlamızda doğal üretim yaban mersini ve birbirinden lezzetli tarifler sizi bekliyor."
-        </Text>
-      </Col>
-    </Row>
+    <Row
+  justify="center"
+  className="absolute bottom-12 w-full z-10 text-white"
+  style={{ transform: 'translateY(10%)' }}
+>
+  <Col
+    span={24}
+    className="text-center px-4 md:px-8 mt-64"
+  >
+    <Text className="font-semibold font-hussar text-base md:text-lg lg:text-xl text-white">
+      "75 dekarlık tarlamızda doğal üretim yaban mersini ve birbirinden lezzetli tarifler sizi bekliyor."
+    </Text>
+  </Col>
+</Row>
+
   </Col>
 </Row>
 

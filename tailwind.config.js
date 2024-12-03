@@ -8,7 +8,8 @@ export default {
       fontFamily: {
         roboto: ['Roboto', 'sans-serif'],
         hussar: ['HussarPrint', 'sans-serif'], 
-        hussarB: ['HussarPrintB', 'sans-serif']
+        hussarB: ['HussarPrintB', 'sans-serif'],
+        hussarA: ['HussarPrintA', 'sans-serif']
       },
       animation: {
         'slide-up': 'slideUp 0.5s ease-out',

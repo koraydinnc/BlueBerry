@@ -10,7 +10,6 @@ import Smoothie from '../assets/Smoothie.png'
 import Chessecake from '../assets/Chessecake.png'
 
 import { Col, Row, Image } from 'antd';
-import Paragraph from 'antd/es/typography/Paragraph';
 import Title from 'antd/es/typography/Title';
 
 const Tarifler = () => {
@@ -33,20 +32,18 @@ const Tarifler = () => {
       <Row className="tarifler-container" gutter={[16, 16]}>
         <Col xs={24} className="relative top-banner">
           <Image
-            className="top-image"
             style={{ width: '100vw', height: '50vh', objectFit: 'cover' }}
             src={Tarif1}
             alt="Blueberry Tarifleri Banner"
             preview={false}
           />
-          <h1 className="banner-title-left font-hussar">Blueberry Tarifleri</h1>
         </Col>
         <Col xs={24}>
       <Title
         className="font-hussar"
         level={2}
         style={{
-          color: '#1B5591',
+          color: '#1D6FB5',
           textAlign: 'center',
           fontSize: '32px', 
           fontWeight: 'bold',

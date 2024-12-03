@@ -80,6 +80,7 @@ const ProductsPage = () => {
               <Card
                 hoverable
                 style={{
+                  height:'400px',
                   borderRadius: '12px',
                   padding: '20px',
                   backgroundColor: 'rgba(17, 34, 64, 0.9)',
@@ -117,6 +118,7 @@ const ProductsPage = () => {
               <Card
                 hoverable
                 style={{
+                  height:'400px',
                   borderRadius: '12px',
                   padding: '20px',
                   backgroundColor: 'rgba(17, 34, 64, 0.9)',

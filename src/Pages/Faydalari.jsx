@@ -22,7 +22,7 @@ const Faydalari = () => {
     <div
       className="min-h-screen w-full bg-cover bg-center"
       style={{
-        backgroundImage: `linear-gradient(to bottom, rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.95)), url(${BG})`,
+        backgroundImage: `url(${BG})`,
       }}
     >
       <Row className="min-h-screen" justify="center" align="middle">
@@ -64,65 +64,49 @@ const Faydalari = () => {
         animate="visible"
         className="pb-16"
       >
-        <Row justify="center" gutter={[24, 24]} className="mt-8 px-4">
-          {[
-            { src: Icon1, title: 'Beyin Sağlığı' },
-            { src: Icon2, title: 'Kalp Sağlığı' },
-            { src: Icon3, title: 'Sindirim Sistemi' },
-          ].map((icon, index) => (
-            <Col xs={24} sm={12} md={8} key={index}>
-              <motion.div variants={contentVariants}>
-                <Card
-                  className="m-4"
-                  hoverable
-                  style={{
-                    borderRadius: '16px',
-                    padding: '30px',
-                    textAlign: 'center',
-                    backgroundColor: 'rgba(17, 34, 64, 0.9)',
-                    backdropFilter: 'blur(10px)',
-                    border: '1px solid rgba(255, 255, 255, 0.2)',
-                    boxShadow: '0 8px 20px rgba(0, 0, 0, 0.3)',
-                  }}
-                >
-                  <div
-                    style={{
-                      width: '90px',
-                      height: '90px',
-                      margin: '0 auto 15px',
-                      backgroundColor: '#1E90FF',
-                      borderRadius: '50%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      boxShadow: '0 4px 10px rgba(0, 0, 0, 0.3)',
-                    }}
-                  >
-                    <Image
-                      src={icon.src}
-                      alt={icon.title}
-                      preview={false}
-                      style={{
-                        width: '70%',
-                      }}
-                    />
-                  </div>
-                  <Title
-                    className="font-hussar mt-2"
-                    level={4}
-                    style={{
-                      color: '#fff',
-                      fontSize: '1.4rem',
-                      fontWeight: '600',
-                    }}
-                  >
-                    {icon.title}
-                  </Title>
-                </Card>
-              </motion.div>
-            </Col>
-          ))}
-        </Row>
+       <Row justify="center" gutter={[24, 24]} className="mt-8 px-4">
+  {[
+    { src: Icon1, title: 'Beyin Sağlığı', offset: '50px' }, 
+    { src: Icon2, title: 'Kalp Sağlığı', offset: '0px' },   
+    { src: Icon3, title: 'Sindirim Sistemi', offset: '50px' }, 
+  ].map((icon, index) => (
+    <Col xs={24} sm={12} md={8} key={index}>
+      <motion.div variants={contentVariants}>
+        <div
+          className="m-4"
+          style={{
+            borderRadius: '16px',
+            padding: '30px',
+            textAlign: 'center',
+            backgroundColor: 'transparent',
+          }}
+        >
+          <Image
+            src={icon.src}
+            alt={icon.title}
+            preview={false}
+            style={{
+              width: '90px', 
+              marginBottom: '5px', 
+              marginTop: icon.offset, 
+            }}
+          />
+          <Title
+            className="font-hussar mt-2"
+            level={4}
+            style={{
+              color: '#fff',
+              fontSize: '1.4rem',
+              fontWeight: '600',
+            }}
+          >
+            {icon.title}
+          </Title>
+        </div>
+      </motion.div>
+    </Col>
+  ))}
+</Row>
       </motion.div>
 
       <motion.div
@@ -150,29 +134,36 @@ const Faydalari = () => {
             text: 'Araştırmalar, düzenli tüketimin kan basıncını olumlu yönde etkilediğini göstermektedir.',
           },
         ].map((section, index) => (
-          <motion.div key={index} variants={contentVariants} className="mb-10">
-            <Title
-              level={3}
-              className="font-hussar text-white"
-              style={{
-                fontSize: '1.7rem',
-                textShadow: '2px 2px 8px rgba(0, 0, 0, 0.6)',
-                color: '#1E90FF',
-              }}
-            >
-              {section.title}
-            </Title>
-            <Paragraph
-              className="font-hussar"
-              style={{
-                color: '#A9B3C1',
-                fontSize: '1.1rem',
-                lineHeight: '1.8',
-              }}
-            >
-              {section.text}
-            </Paragraph>
-          </motion.div>
+          <motion.div 
+  key={index} 
+  variants={contentVariants} 
+  className="mb-10 p-6 bg-gradient-to-r rounded-lg shadow-lg"
+>
+  <div className="flex items-center gap-4 mb-4 justify-center">
+ 
+    <Title
+      level={3}
+      className="font-hussar text-white"
+      style={{
+        fontSize: '1.7rem',
+        textShadow: '2px 2px 8px rgba(0, 0, 0, 0.6)',
+      }}
+    >
+      <span className='text-blue-400'>{section.title}</span>
+    </Title>
+  </div>
+  <Paragraph
+    className="font-hussar justify-center items-center flex"
+    style={{
+      color: '#F5F7FA',
+      fontSize: '1rem',
+      lineHeight: '1.8',
+      textAlign: 'justify',
+    }}
+  >
+     <span >{section.text}</span>
+  </Paragraph>
+</motion.div>
         ))}
       </motion.div>
       <br /><br /><br /><br />

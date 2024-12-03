@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import blueberry1 from "../assets/Blueberry/blueberry4.jpg";
 import blueberry2 from "../assets/Blueberry/blueberry2.jpg";
 import blueberry3 from "../assets/Blueberry/blueberry3.jpg";
-import blueberry4 from "../assets/Blueberry/mavıalan.png";
+import blueberry4 from "../assets/Blueberry/mavıalan.jpg";
 
 const { Title, Paragraph } = Typography;
 
@@ -48,6 +48,7 @@ const Blueberry = () => {
           src={blueberry1}
           alt="Blueberry"
           style={{
+            maxHeight:'50vh',
             width: "100%",
             height: "100%",
             objectFit: "cover",
@@ -73,7 +74,7 @@ const Blueberry = () => {
             }}
             className="font-hussar"
           >
-            Doğanın En Özel Lezzeti: <strong style={{ color: "#1E90FF" }}>Blueberry</strong>
+            Doğanın En Özel Lezzeti: <strong style={{ color: "#1D6FB5" }}>Blueberry</strong>
           </Title>
         </div>
       </section>
@@ -86,9 +87,9 @@ const Blueberry = () => {
               image: blueberry3,
               description: (
                 <>
-                  <span style={{ color: "#1E90FF", fontWeight: "bold" }}>Soğutma Süreleri:</span> Yıllık soğutma süreleri blueberrynin aromasını ve raf ömrünü etkiler. Çiftliğimiz 100 gün boyunca -4°C altında iklim koşullarına sahiptir.
+                  <span style={{ color: "#1D6FB5", fontWeight: "bold" }}>Soğutma Süreleri:</span> Yıllık soğutma süreleri blueberrynin aromasını ve raf ömrünü etkiler. Çiftliğimiz 100 gün boyunca -4°C altında iklim koşullarına sahiptir.
                   <br />
-                  <span style={{ color: "#1E90FF", fontWeight: "bold" }}>Organik Tarım:</span> Kimyasal gübre veya sentetik ilaçlar kullanılmaz.
+                  <span style={{ color: "#1D6FB5", fontWeight: "bold" }}>Organik Tarım:</span> Kimyasal gübre veya sentetik ilaçlar kullanılmaz.
                 </>
               ),
             },
@@ -97,9 +98,9 @@ const Blueberry = () => {
               image: blueberry4,
               description: (
                 <>
-                  <span style={{ color: "#1E90FF", fontWeight: "bold" }}>Türler:</span> Düke, Chandler, Bluegold gibi çeşitler yetiştiriyoruz.
+                  <span style={{ color: "#1D6FB5", fontWeight: "bold" }}>Türler:</span> Düke, Chandler, Bluegold gibi çeşitler yetiştiriyoruz.
                   <br />
-                  <span style={{ color: "#1E90FF", fontWeight: "bold" }}>Hasat Dönemi:</span> Haziran'dan Eylül'e kadar uzanır.
+                  <span style={{ color: "#1D6FB5", fontWeight: "bold" }}>Hasat Dönemi:</span> Haziran'dan Eylül'e kadar uzanır.
                 </>
               ),
             },
@@ -108,9 +109,9 @@ const Blueberry = () => {
               image: blueberry2,
               description: (
                 <>
-                  <span style={{ color: "#1E90FF", fontWeight: "bold" }}>Besin Değerleri:</span> 1 bardak blueberry, günlük C vitamini ihtiyacının %16'sını karşılar.
+                  <span style={{ color: "#1D6FB5", fontWeight: "bold" }}>Besin Değerleri:</span> 1 bardak blueberry, günlük C vitamini ihtiyacının %16'sını karşılar.
                   <br />
-                  <span style={{ color: "#1E90FF", fontWeight: "bold" }}>Kalori:</span> 84 kalori içerir.
+                  <span style={{ color: "#1D6FB5", fontWeight: "bold" }}>Kalori:</span> 84 kalori içerir.
                 </>
               ),
             },
@@ -126,13 +127,14 @@ const Blueberry = () => {
                 <Card
                   hoverable
                   style={{
+                    height:'500px',
                     borderRadius: "10px",
                     overflow: "hidden",
                     boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
                   }}
                   cover={<img src={image} alt={title} style={{ height: "200px", objectFit: "cover" }} />}
                 >
-                  <Title level={3} className="font-hussar" style={{ fontSize: "1.5rem", marginBottom: "1rem", color: "#1E90FF" }}>
+                  <Title level={3} className="font-hussar" style={{ fontSize: "1.5rem", marginBottom: "1rem", color: "#1D6FB5" }}>
                     {title}
                   </Title>
                   <Paragraph className="font-hussar" style={{ fontSize: "1rem", lineHeight: "1.6" }}>{description}</Paragraph>
@@ -146,7 +148,7 @@ const Blueberry = () => {
       <footer
         style={{
           padding: "2rem 0",
-          backgroundColor: "#001529",
+          backgroundColor: "#1D6FB5",
           textAlign: "center",
           color: "#fff",
         }}
