@@ -87,6 +87,7 @@ const Header = () => {
           }}
         >
           <a
+          href='/ürünlerimiz'
             className="hover:text-blue-800  font-extrabold font-hussar flex items-center"
           >
              {item} <DownOutlined className="ml-1" />

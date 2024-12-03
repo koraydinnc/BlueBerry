@@ -1,61 +1,81 @@
 import { Card, Image } from "antd";
+import { motion } from "framer-motion";
 import Fotograf from "../assets/tımelınehıkayearasıfoto.jpg";
 import HikayeBaslik from "../assets/baslık.png";
 import TimelineImage from "../assets/tımelıne.png";
 
 const StoryPage = () => {
+  const scrollAnimation = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.9 } },
+  };
+
   return (
     <div className="bg-gray-50 py-8 px-4">
       <div className="max-w-5xl mx-auto">
-        <div className="mb-8 text-center mr-4">
+        <motion.div
+          variants={scrollAnimation}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="mb-8 text-center mr-4"
+        >
           <img
-            
             src={HikayeBaslik}
             alt="Hikaye Başlığı"
             className="mx-auto object-cover max-w-80"
           />
-        </div>
+        </motion.div>
 
-        <div className="mb-12">
+        <motion.div
+          variants={scrollAnimation}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="mb-12"
+        >
           <Card hoverable className="shadow-lg">
             <div className="p-4">
               <p className="text-gray-700 text-lg leading-relaxed font-hussar">
-                2018 yılında serüvenimiz ülkemizin nadir iklim koşullarında yetişen ilk blueberry fidanı ile başladı. 
-                Bugün, doğanın gücü ile beraber yetiştiriciliğin tüm koşullarını profesyonel bir şekilde geliştirdiğimiz 
-                bahçemiz 75 dekarlık bir alan buldu. Yeni üretim alanları ile birlikte Tuzla Köyü, Türkiye'nin en fazla 
-                üretimin gerçekleştiği blueberry köyü olacaktır.
+                • Çiftliğimiz, <span className="text-indigo-500">1200 metre rakımda</span> yer almakta olup, bu yükseklik bölgeye özgü <span className="text-indigo-500">ideal iklim koşullarının</span> sağlanmasına yardımcı oluyor. Yüksek rakım, meyvelerimizin aromasını geliştirirken aynı zamanda <span className="text-indigo-500">daha sağlıklı ve uzun raf ömrüne</span> sahip olmalarını sağlıyor.
               </p>
               <p className="text-gray-700 text-lg leading-relaxed mt-4 font-hussar">
-                Organik ve tamamen doğal üretim alanımız, ... (buraya üretim, organik ve sürdürülebilirlik ile alakalı 
-                bilgiler gerek). Örneğin, ... ormanının kıyısında kendi iklim koşullarına tamamen uymasından kaynaklı 
-                blueberry yetiştiriciliği için bize harika olanaklar sağlıyor.
+                • Kurulum öncesi, toprak analizleri <span className="text-indigo-500">Prof. Dr. Aysan Şentürk</span> ve ekibi tarafından titizlikle yapılmıştır. Toprağımızın <span className="text-indigo-500">organik seviyesi oldukça yüksek</span> olup, pH seviyesi ortalama <span className="text-indigo-500">4.8-5.2</span> civarındadır. Bu pH aralığı, blueberry için ideal bir ortam sağlar.
               </p>
               <p className="text-gray-700 text-lg leading-relaxed mt-4 font-hussar">
-                2023 verilerini göz önüne aldığımızda blueberry miktarının %37'si Amerika, %24'ü Kanada, %6'sı İspanya 
-                olmakla beraber bu veri Türkiye'de %0,064. Bu uygun iklim koşulları ve profesyonel ekibimiz ile birlikte 
-                bu sayıyı artırmak ve bu sağlıklı meyveyi sofralarınıza ekleyerek hem doğaya hem de toplumumuza fayda 
-                sağlamak için çalışıyoruz.
+                • Çiftliğimizde her şey doğaya ve çevreye saygı ile yapılmaktadır. <span className="text-indigo-500">Kimyasal gübreler</span> veya zararlılarla mücadele için sentetik ilaçlar kullanmıyoruz. Tüm yetiştirme sürecimiz, <span className="text-indigo-500">doğa dostu ve organik yöntemlerle</span> gerçekleştirilir.
               </p>
             </div>
           </Card>
-        </div>
+        </motion.div>
 
-        <div className="mb-12">
+        <motion.div
+          variants={scrollAnimation}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="mb-12"
+        >
           <Image
             src={Fotograf}
             alt="Hikaye Arası Fotoğraf"
             className="rounded-lg"
           />
-        </div>
+        </motion.div>
 
-        <div>
+        <motion.div
+          variants={scrollAnimation}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
           <Image
             src={TimelineImage}
             preview={false}
             alt="Patika'nın Hikayesi"
             className="object-cover rounded-lg"
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

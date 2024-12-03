@@ -1,5 +1,6 @@
-import { Row, Col, Typography, Card, Image } from "antd";
+import { Row, Col, Typography, Card } from "antd";
 import { Helmet } from "react-helmet";
+import { motion } from "framer-motion";
 import blueberry1 from "../assets/Blueberry/blueberry4.jpg";
 import blueberry2 from "../assets/Blueberry/blueberry2.jpg";
 import blueberry3 from "../assets/Blueberry/blueberry3.jpg";
@@ -8,9 +9,14 @@ import blueberry4 from "../assets/Blueberry/mavıalan.png";
 const { Title, Paragraph } = Typography;
 
 const Blueberry = () => {
+  const cardVariants = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.8 } },
+    hover: { scale: 1.05, boxShadow: "0 8px 20px rgba(0, 0, 0, 0.2)", transition: { duration: 0.3 } },
+  };
+
   return (
-    <div style={{ backgroundColor: "#f8f9fa", fontFamily: "Arial, sans-serif" }}>
-      {/* SEO */}
+    <div style={{ backgroundColor: "#f8f9fa", fontFamily: "Arial, sans-serif" }} className="font-hussar">
       <Helmet>
         <title>Doğanın En Özel Lezzeti: Blueberry | Patika Blueberry</title>
         <meta
@@ -29,64 +35,48 @@ const Blueberry = () => {
       </Helmet>
 
       <section
-  style={{
-    position: "relative",
-    minHeight: "50vh", 
-    textAlign: "center",
-    display: "flex", 
-    justifyContent: "center",
-    alignItems: "center",
-  }}
->
-  <Image
-    src={blueberry1}
-    loading="lazy"
-    alt="Blueberry"
-    preview={false}
-    className="brightness-50"
-    style={{
-      width: "100%",
-      height: "100%",
-      objectFit: "cover",
-    
-    }}
-  />
-  <div
-    style={{
-      zIndex: 1, 
-      color: "#fff",
-      textShadow: "2px 2px 8px rgba(0, 0, 0, 0.7)",
-      padding: "1rem",
-      position:'absolute'
-    }}
-  >
-    <Title
-      level={1}
-      className="font-hussar font-extrabold-"
-      style={{
-        fontSize: "clamp(1.5rem, 5vw, 3rem)", 
-        fontWeight: "bold",
-        marginBottom: "1rem",
-        color: "#fff",
-      }}
-    >
-      Doğanın En Özel Lezzeti: <strong className="text-blue-600">Blueberry</strong>
-    </Title>
-    <Paragraph
-      className="font-hussar"
-      style={{
-        maxWidth: "600px",
-        margin: "0 auto",
-        lineHeight: "1.8",
-        fontSize: "clamp(1rem, 3vw, 1.25rem)", 
-        color: "#fff",
-      }}
-    >
-      Sağlığınızı destekleyen, doğanın eşsiz hediyesi blueberry'lerimizi tanıyın.
-    </Paragraph>
-  </div>
-</section>
-
+        style={{
+          position: "relative",
+          minHeight: "50vh",
+          textAlign: "center",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <img
+          src={blueberry1}
+          alt="Blueberry"
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            filter: "brightness(50%)",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            zIndex: 1,
+            color: "#fff",
+            textShadow: "2px 2px 8px rgba(0, 0, 0, 0.7)",
+            padding: "1rem",
+          }}
+        >
+          <Title
+            level={1}
+            style={{
+              fontSize: "clamp(1.5rem, 5vw, 3rem)",
+              fontWeight: "bold",
+              marginBottom: "1rem",
+              color: "#fff",
+            }}
+            className="font-hussar"
+          >
+            Doğanın En Özel Lezzeti: <strong style={{ color: "#1E90FF" }}>Blueberry</strong>
+          </Title>
+        </div>
+      </section>
 
       <section style={{ padding: "3rem 1rem" }}>
         <Row gutter={[32, 32]} justify="center">
@@ -94,58 +84,60 @@ const Blueberry = () => {
             {
               title: "Toprak ve İklim",
               image: blueberry3,
-              description: `Çiftliğimiz 1200 metre rakımda yer almakta olup, eşsiz iklim koşullarına sahiptir. 
-                İdeal pH seviyesiyle toprak, blueberrylerimizin aroma ve besin değerlerini maksimum seviyeye çıkarır.`,
-              extra: `Blueberrylerimiz doğal yöntemlerle üretilmektedir.`,
+              description: (
+                <>
+                  <span style={{ color: "#1E90FF", fontWeight: "bold" }}>Soğutma Süreleri:</span> Yıllık soğutma süreleri blueberrynin aromasını ve raf ömrünü etkiler. Çiftliğimiz 100 gün boyunca -4°C altında iklim koşullarına sahiptir.
+                  <br />
+                  <span style={{ color: "#1E90FF", fontWeight: "bold" }}>Organik Tarım:</span> Kimyasal gübre veya sentetik ilaçlar kullanılmaz.
+                </>
+              ),
             },
             {
-              title: "İklim Avantajları",
+              title: "Çeşitler ve Hasat",
               image: blueberry4,
-              description: `100 gün boyunca -4°C altında geçen soğuk havalar, blueberrylerimizin lezzetini artırır.`,
-              extra: `Sulama sırasında kullanılan asidik su, bitkilerin doğal büyümesine destek sağlar.`,
+              description: (
+                <>
+                  <span style={{ color: "#1E90FF", fontWeight: "bold" }}>Türler:</span> Düke, Chandler, Bluegold gibi çeşitler yetiştiriyoruz.
+                  <br />
+                  <span style={{ color: "#1E90FF", fontWeight: "bold" }}>Hasat Dönemi:</span> Haziran'dan Eylül'e kadar uzanır.
+                </>
+              ),
             },
             {
-              title: "Çeşitlilik ve Hasat",
+              title: "Besin Değeri ve Sağlık",
               image: blueberry2,
-              description: `Düke, Bluecroup ve Chandler türleriyle farklı tat ve olgunlaşma dönemlerinde hasat yapıyoruz.`,
-              extra: `Hasadımız Haziran'dan Eylül'e kadar uzanır.`,
+              description: (
+                <>
+                  <span style={{ color: "#1E90FF", fontWeight: "bold" }}>Besin Değerleri:</span> 1 bardak blueberry, günlük C vitamini ihtiyacının %16'sını karşılar.
+                  <br />
+                  <span style={{ color: "#1E90FF", fontWeight: "bold" }}>Kalori:</span> 84 kalori içerir.
+                </>
+              ),
             },
-          ].map(({ title, image, description, extra }, index) => (
+          ].map(({ title, image, description }, index) => (
             <Col key={index} xs={24} md={12} lg={8}>
-              <Card
-                hoverable
-                style={{
-                  borderRadius: "10px",
-                  overflow: "hidden",
-                  transition: "transform 0.3s ease, box-shadow 0.3s ease",
-                  boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
-                }}
-                cover={
-                  <Image
-                    loading="lazy"
-                    src={image}
-                    alt={title}
-                    preview={false}
-                    style={{ height: "200px", objectFit: "cover" }}
-                  />
-                }
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.transform = "scale(1.05)")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.transform = "scale(1)")
-                }
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                whileHover="hover"
+                viewport={{ once: true }}
+                variants={cardVariants}
               >
-                <Title level={3} className="font-hussar text-blue-600" style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>
-                  {title}
-                </Title>
-                <Paragraph className="font-hussar" style={{ fontSize: "1rem", lineHeight: "1.6" }}>
-                  {description}
-                </Paragraph>
-                <Paragraph className="font-hussar" style={{ fontSize: "1rem", lineHeight: "1.6" }}>
-                  {extra}
-                </Paragraph>
-              </Card>
+                <Card
+                  hoverable
+                  style={{
+                    borderRadius: "10px",
+                    overflow: "hidden",
+                    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+                  }}
+                  cover={<img src={image} alt={title} style={{ height: "200px", objectFit: "cover" }} />}
+                >
+                  <Title level={3} className="font-hussar" style={{ fontSize: "1.5rem", marginBottom: "1rem", color: "#1E90FF" }}>
+                    {title}
+                  </Title>
+                  <Paragraph className="font-hussar" style={{ fontSize: "1rem", lineHeight: "1.6" }}>{description}</Paragraph>
+                </Card>
+              </motion.div>
             </Col>
           ))}
         </Row>
@@ -159,9 +151,7 @@ const Blueberry = () => {
           color: "#fff",
         }}
       >
-        <Paragraph className="font-hussar font-bold text-white" style={{ fontSize: "1rem" }}>
-          © 2024 Patika Blueberry | Tüm Hakları Saklıdır.
-        </Paragraph>
+        <Paragraph className="font-hussar text-white" style={{ fontSize: "1rem" }}>© 2024 Patika Blueberry</Paragraph>
       </footer>
     </div>
   );

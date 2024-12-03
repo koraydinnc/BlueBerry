@@ -55,19 +55,19 @@ const HomePage = () => {
       </Row>
 
       <Row justify="center" align="middle" className="text-center py-8 px-4">
-        <Col span={24}>
-          <Title
-          style={{color:'#1D6DB4'}}
-            className="font-extrabold font-hussar bg-white text-blue-600 text-xl lg:text-2xl"
-            level={1}
-          >
-            “Beslenmenizde tek bir değişiklik yapacaksanız, o da yaban mersini
-            eklemek olmalı.”
-          </Title>
-        </Col>
-      </Row>
+  <Col span={24}>
+    <Title
+      style={{ color: '#1D6DB4' }}
+      className="font-extrabold font-hussar bg-white text-blue-600 text-xl lg:text-2xl"
+      level={1}
+    >
+      “Beslenmenizde tek bir değişiklik yapacaksanız, o da yaban mersini
+      eklemek olmalı.”
+    </Title>
+  </Col>
+</Row>
 
-      <Row>
+<Row>
   <Col span={24} style={{ position: "relative" }}>
     <div className="flex justify-center mb-8">
       <Image
@@ -80,33 +80,21 @@ const HomePage = () => {
     <Image
       preview={false}
       src={AltFotograf}
-      style={{minWidth:'100vw'}}
-      className=" h-[25vh] lg:h-[40vh] object-cover brightness-50"
+      style={{ minWidth: '100vw' }}
+      className="min-h-56 lg:h-[50vh] object-cover brightness-50"
       alt="Blueberry"
     />
-    <div className="absolute inset-0 flex justify-center items-center mb-32 lg:mb-48 text-white">
-      <Text
-        className="font-extrabold font-hussar text-3xl lg:text-3xl"
-        style={{ color: "#FFF", textShadow: "2px 2px 6px rgba(0, 0, 0, 0.7)" }}
-      >
-          “75 dekar tarlalarımızda blueberry'lerimizi sizler için üretiyoruz.”
-          </Text>
-    </div>
 
     <Row
       justify="space-around"
       align="middle"
       className="absolute top-1/2 left-0 w-full transform -translate-y-1/2 z-10 text-white"
     >
-      <Col span={24} className="text-center m-12">
+      <Col span={24} className="text-center m-4">
         <Text className="font-semibold font-hussar text-2xl lg:text-4xl px-8 text-white">
         </Text>
       </Col>
-      {[
-        { img: Organik, label: "Organik" },
-        { img: Yerli, label: "Yerli Üretim" },
-        { img: Saglik, label: "Sağlıklı" },
-      ].map((feature, index) => (
+      {[{ img: Organik, label: "Organik" }, { img: Yerli, label: "Yerli Üretim" }, { img: Saglik, label: "Sağlıklı" }].map((feature, index) => (
         <Col
           xs={8}
           sm={6}
@@ -117,7 +105,7 @@ const HomePage = () => {
           <Image
             preview={false}
             src={feature.img}
-            className="max-w-[100px] lg:max-w-[140px] h-auto"
+            className="max-w-[30px] lg:max-w-[100px] h-auto"
             alt={feature.label}
           />
           <Text className="font-extrabold font-hussar mt-2 text-lg lg:text-xl text-white">
@@ -126,13 +114,21 @@ const HomePage = () => {
         </Col>
       ))}
     </Row>
+
+    <Row justify="center" className="absolute bottom-20 w-full transform translate-y-10 z-10 text-white">
+      <Col span={24} className="text-center">
+        <Text className="font-semibold font-hussar text-xl lg:text-xl   text-white">
+          "75 dekarlık tarlamızda doğal üretim yaban mersini ve birbirinden lezzetli tarifler sizi bekliyor."
+        </Text>
+      </Col>
+    </Row>
   </Col>
 </Row>
 
 
       
 <Row
-  className="py-8 px-4 cursor-pointer"
+  className=" cursor-pointer"
   justify="center"
   gutter={[16, 16]}
   style={{ marginTop: "20px", minWidth:'100vw' }}
@@ -146,12 +142,12 @@ const HomePage = () => {
     />
   </Col>
   <Col className="absolute cursor-pointer">
-    <Image
-      preview={false}
-      onClick={() => navigate('/tarifler')}
-      className="max-w-80 lg:max-w-96 mt-24"
-      src={ButtonBG}
-    />
+  <Image
+  preview={false}
+  onClick={() => navigate('/tarifler')}
+  className="ButtonBG-image  lg:max-w-96 mt-24 "
+  src={ButtonBG}
+/>
   </Col>
 </Row>
 

@@ -36,4 +36,5 @@ export const MainRouter = [
         component: StoryPage,
         exact:true
     },
+
 ]
