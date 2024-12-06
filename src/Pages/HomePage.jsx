@@ -56,14 +56,13 @@ const HomePage = () => {
 
       <Row justify="center" align="middle" className="text-center py-8 px-4">
   <Col span={24}>
-    <Title
+    <span
       style={{ color: '#1D6DB4' }}
-      className="font-extrabold font-hussar bg-white text-blue-600 text-xl lg:text-2xl"
-      level={1}
+      className="font-extrabold font-hussar bg-white text-blue-600 text-xl md:text-2xl lg:text-4xl"
     >
       “Beslenmenizde tek bir değişiklik yapacaksanız, o da yaban mersini
       eklemek olmalı.”
-    </Title>
+    </span>
   </Col>
 </Row>
 
@@ -73,7 +72,7 @@ const HomePage = () => {
       <Image
         src={Dogal}
         preview={false}
-        className="max-w-xs lg:max-w-md"
+        className="max-w-48 lg:max-w-72"
         alt="Doğal"
       />
     </div>
@@ -90,7 +89,7 @@ const HomePage = () => {
       align="middle"
       className="absolute top-1/2 left-0 w-full transform -translate-y-1/2 z-10 text-white"
     >
-      <Col span={24} className="text-center m-4">
+      <Col span={24} className="text-center mt-4">
         <Text className="font-semibold font-hussar text-2xl lg:text-4xl px-8 text-white">
         </Text>
       </Col>
@@ -105,12 +104,13 @@ const HomePage = () => {
           <Image
             preview={false}
             src={feature.img}
-            className="max-w-[30px] lg:max-w-[100px] h-auto"
+            className="max-w-[50px] lg:max-w-[200px]"
             alt={feature.label}
           />
-          <Text className="font-extrabold font-hussar mt-2 text-lg lg:text-xl text-white">
+          <Text className="font-extrabold font-hussar mt-4 lg:text-4xl text-white">
             {feature.label}
           </Text>
+          <br /><br />
         </Col>
       ))}
     </Row>
@@ -122,13 +122,16 @@ const HomePage = () => {
 >
   <Col
     span={24}
-    className="text-center px-4 md:px-8 mt-64"
+    className="text-center px-8 md:px-8 mt-80 sm:mt-72 lg:mt-32"
   >
-    <Text className="font-semibold font-hussar text-base md:text-lg lg:text-xl text-white">
+    <span
+      className="font-semibold font-hussar text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl"
+    >
       "75 dekarlık tarlamızda doğal üretim yaban mersini ve birbirinden lezzetli tarifler sizi bekliyor."
-    </Text>
+    </span>
   </Col>
 </Row>
+
 
   </Col>
 </Row>
@@ -153,7 +156,7 @@ const HomePage = () => {
   <Image
   preview={false}
   onClick={() => navigate('/tarifler')}
-  className="ButtonBG-image  lg:max-w-96 mt-24 "
+  className="ButtonBG-image md:max-w-56 lg:max-w-96 mt-24 "
   src={ButtonBG}
 />
   </Col>

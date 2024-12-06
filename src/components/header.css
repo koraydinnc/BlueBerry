@@ -1,0 +1,13 @@
+/* header.css */
+
+/* Menü öğelerinin varsayılan metin rengini belirler */
+.custom-dropdown .ant-dropdown-menu-item {
+    color: #1D6FB5 !important; /* Mavi renk */
+  }
+  
+  /* Menü öğesi hover efekti */
+  .custom-dropdown .ant-dropdown-menu-item:hover {
+    background-color: transparent !important; /* Siyah arka planı kaldırır */
+    color: #1D6FB5 !important; /* Mavi renk */
+  }
+  

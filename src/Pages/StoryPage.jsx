@@ -23,7 +23,7 @@ const StoryPage = () => {
           <img
             src={HikayeBaslik}
             alt="Hikaye Başlığı"
-            className="mx-auto object-cover max-w-80"
+            className="mx-auto object-cover max-w-40"
           />
         </motion.div>
 

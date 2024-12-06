@@ -134,10 +134,27 @@ const Blueberry = () => {
                   }}
                   cover={<img src={image} alt={title} style={{ height: "200px", objectFit: "cover" }} />}
                 >
-                  <Title level={3} className="font-hussar" style={{ fontSize: "1.5rem", marginBottom: "1rem", color: "#1D6FB5" }}>
-                    {title}
-                  </Title>
-                  <Paragraph className="font-hussar" style={{ fontSize: "1rem", lineHeight: "1.6" }}>{description}</Paragraph>
+                  <Title
+  level={3}
+  className="font-hussar"
+  style={{
+    fontSize: "1.5rem",
+    marginBottom: "1.5rem", 
+    color: "#1D6FB5",
+  }}
+>
+  {title}
+</Title>
+<span
+  className="font-hussar"
+  style={{
+    fontSize: "1rem",
+    lineHeight: "1.6",
+  }}
+>
+  {description}
+</span>
+
                 </Card>
               </motion.div>
             </Col>

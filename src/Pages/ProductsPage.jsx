@@ -16,6 +16,30 @@ const ProductsPage = () => {
     visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
   };
 
+  const cardStyle = {
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    borderRadius: '12px',
+    padding: '20px',
+    backgroundColor: 'rgba(17, 34, 64, 0.9)',
+    color: '#FFF',
+    boxShadow: '0 8px 20px rgba(0, 0, 0, 0.2)',
+  };
+
+  const titleStyle = {
+    color: '#1E90FF',
+    textShadow: '2px 2px 8px rgba(0, 0, 0, 0.3)',
+    fontSize: '1.5rem',
+  };
+
+  const paragraphStyle = {
+    color: '#A9B3C1',
+    fontSize: '1rem',
+    lineHeight: '1.8',
+  };
+
   return (
     <div
       className="min-h-screen w-full bg-cover bg-center"
@@ -28,14 +52,6 @@ const ProductsPage = () => {
         <title>Ürünlerimiz - Blueberry</title>
         <meta name="description" content="Blueberry ürünlerimizi keşfedin: Doğadan gelen kalite ve lezzet!" />
         <meta name="keywords" content="blueberry, dondurulmuş ürünler, taze ürünler, organik, doğa dostu" />
-        <meta property="og:title" content="Ürünlerimiz - Blueberry" />
-        <meta property="og:description" content="Blueberry ürünlerimizi keşfedin: Doğadan gelen kalite ve lezzet!" />
-        <meta property="og:image" content="URL_to_image_here" />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Ürünlerimiz - Blueberry" />
-        <meta name="twitter:description" content="Blueberry ürünlerimizi keşfedin: Doğadan gelen kalite ve lezzet!" />
-        <meta name="twitter:image" content="URL_to_image_here" />
       </Helmet>
 
       <Row justify="center" className="text-center mb-12">
@@ -46,7 +62,7 @@ const ProductsPage = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
             <Title
-              className='font-hussar'
+              className="font-hussar"
               level={1}
               style={{
                 color: '#1E90FF',
@@ -57,7 +73,7 @@ const ProductsPage = () => {
               Ürünlerimiz
             </Title>
             <Paragraph
-              className='font-hussar'
+              className="font-hussar"
               style={{
                 fontSize: '1.2rem',
                 color: '#A9B3C1',
@@ -74,77 +90,32 @@ const ProductsPage = () => {
         initial="hidden"
         animate="visible"
       >
-        <Row gutter={[32, 32]} justify="center" className="mb-8 px-4">
-          <Col xs={24} sm={12} md={10}>
-            <motion.div variants={contentVariants}>
-              <Card
-                hoverable
-                style={{
-                  height:'400px',
-                  borderRadius: '12px',
-                  padding: '20px',
-                  backgroundColor: 'rgba(17, 34, 64, 0.9)',
-                  color: '#FFF',
-                  boxShadow: '0 8px 20px rgba(0, 0, 0, 0.2)',
-                }}
-              >
-                <Title
-                  className='font-hussar'
-                  level={3}
-                  style={{
-                    color: '#1E90FF',
-                    textShadow: '2px 2px 8px rgba(0, 0, 0, 0.3)',
-                    fontSize: '1.5rem',
-                  }}
-                >
+        <Row
+          gutter={[32, 32]}
+          justify="center"
+          className="mb-8 px-4"
+          style={{ display: 'flex', alignItems: 'stretch' }}
+        >
+          <Col xs={24} sm={12} md={10} style={{ display: 'flex' }}>
+            <motion.div variants={contentVariants} style={{ width: '100%' }}>
+              <Card hoverable style={cardStyle}>
+                <Title className="font-hussar" level={3} style={titleStyle}>
                   Dondurulmuş Ürünler
                 </Title>
-                <Paragraph
-                  className='font-hussar'
-                  style={{
-                    color: '#A9B3C1',
-                    fontSize: '1rem',
-                    lineHeight: '1.8',
-                  }}
-                >
+                <Paragraph className="font-hussar" style={paragraphStyle}>
                   Bir blueberry'nin en önemli özelliklerinden biri, yıllık soğutma süreleri ile doğrudan ilişkili olan aromasının ve raf ömrünün kalitesidir. Çiftliğimizin bulunduğu bölge, yılda 100 gün boyunca -4°C altında soğuyan iklim koşullarıyla, blueberrylerimizin kaliteli bir şekilde gelişmesine katkıda bulunur. Bu uzun soğutma süresi, meyvelerimizin hem aromasını hem de besin değerlerini maksimum seviyeye çıkarır.
                 </Paragraph>
               </Card>
             </motion.div>
           </Col>
 
-          <Col xs={24} sm={12} md={10}>
-            <motion.div variants={contentVariants}>
-              <Card
-                hoverable
-                style={{
-                  height:'400px',
-                  borderRadius: '12px',
-                  padding: '20px',
-                  backgroundColor: 'rgba(17, 34, 64, 0.9)',
-                  color: '#FFF',
-                  boxShadow: '0 8px 20px rgba(0, 0, 0, 0.2)',
-                }}
-              >
-                <Title
-                  className='font-hussar'
-                  level={3}
-                  style={{
-                    color: '#1E90FF',
-                    textShadow: '2px 2px 8px rgba(0, 0, 0, 0.3)',
-                    fontSize: '1.5rem',
-                  }}
-                >
+          <Col xs={24} sm={12} md={10} style={{ display: 'flex' }}>
+            <motion.div variants={contentVariants} style={{ width: '100%' }}>
+              <Card hoverable style={cardStyle}>
+                <Title className="font-hussar" level={3} style={titleStyle}>
                   Taze Ürünler
                 </Title>
-                <Paragraph
-                  className='font-hussar'
-                  style={{
-                    color: '#A9B3C1',
-                    fontSize: '1rem',
-                    lineHeight: '1.8',
-                  }}
-                >
+                <Paragraph className="font-hussar" style={paragraphStyle}>
                   Çiftliğimizde her şey doğaya ve çevreye saygı ile yapılmaktadır. Kimyasal gübreler veya zararlılarla mücadele için sentetik ilaçlar kullanmıyoruz. Tüm yetiştirme sürecimiz, doğa dostu ve organik yöntemlerle gerçekleştirilir. Amacımız, sizlere en taze, en sağlıklı ve en doğal blueberryyi sunmaktır.
                 </Paragraph>
               </Card>

@@ -4,6 +4,7 @@ import Logo from '../assets/Logo.png';
 import ButtonBG from '../assets/ButtonBG.png';
 import { DownOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
+import './header.css'
 
 const Header = () => {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ const Header = () => {
   const menu = (
     <Menu>
       {['Hikayemiz', 'Blueberry', 'Ürünlerimiz', 'Faydaları', 'Tarifler'].map((item, index) => (
-        <Menu.Item key={index}>
+        <Menu.Item key={index} className="no-hover-effect">
           <span
             onClick={() => navigate(`/${item.toLowerCase()}`)}
             className="hover:text-[#1D6FB5] font-hussar cursor-pointer"
@@ -39,16 +40,18 @@ const Header = () => {
         </Col>
 
         <Col xs={8} sm={12} md={12} className="flex justify-center">
-          <Dropdown
-            overlay={menu}
-            trigger={['click']}
-            className="sm:hidden"
-            overlayClassName="custom-dropdown"
-          >
-            <Button type="text" className="text-[#1D6FB5] font-hussar font-semibold">
-              Menü <DownOutlined />
-            </Button>
-          </Dropdown>
+        <Dropdown
+  overlay={menu}
+  trigger={['click']}
+  className="sm:hidden"
+  overlayClassName="custom-dropdown" /* CSS sınıfı ile bağlandı */
+>
+  <Button type="text" className="text-[#1D6FB5] font-hussar font-semibold">
+    Menü <DownOutlined />
+  </Button>
+</Dropdown>
+
+
 
           <motion.ul
             className="hidden sm:flex space-x-4 md:space-x-6 lg:space-x-8 text-[#1D6FB5] font-hussar font-semibold text-sm sm:text-base md:text-lg"
@@ -79,7 +82,7 @@ const Header = () => {
                     }
                     placement="bottom"
                     overlayInnerStyle={{
-                      backgroundColor: '#1D6FB5',
+                      backgroundColor: '#87C522',
                       color: 'white',
                       borderRadius: '8px',
                       padding: '10px',
