@@ -12,6 +12,7 @@ import Cheesecake from '../assets/Chessecake.png';
 
 import { Col, Row, Image } from 'antd';
 import Title from 'antd/es/typography/Title';
+import { Helmet } from 'react-helmet';
 
 
 
@@ -124,19 +125,16 @@ Afiyet olsun!
 const Tarifler = () => {
   return (
     <div>
-      <head>
-        <title>Blueberry Tarifleri | Lezzetli ve Sağlıklı Tarifler</title>
+       <Helmet>
+        <title>Blueberry Tarifleri | Patika Blueberry</title>
         <meta
           name="description"
-          content="Blueberry ile hazırlanan lezzetli ve sağlıklı tarifler: Smoothie, Muffin, Cheesecake ve Panna Cotta gibi tarifleri keşfedin."
+          content="Patika Blueberry ile lezzetli ve sağlıklı tarifleri keşfedin. Blueberry reçelleri, smoothieler ve tatlılarla doğallığın tadını çıkarın."
         />
-        <meta
-          name="keywords"
-          content="blueberry tarifleri, smoothie tarifleri, muffin tarifleri, cheesecake tarifleri, panna cotta tarifleri, sağlıklı tarifler"
-        />
-        <meta name="author" content="Blueberry Tarifi Ekibi" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </head>
+        <meta name="keywords" content="blueberry tarifleri, doğal meyve, sağlıklı tarifler, reçel, tatlı tarifleri" />
+        <meta property="og:title" content="Blueberry Tarifleri: Sağlıklı ve Lezzetli Seçenekler" />
+        <meta property="og:image" content="/assets/Tarifler/tarif1.jpg" />
+      </Helmet>
 
       <Row className="tarifler-container" gutter={[16, 16]}>
         <Col xs={24} className="relative top-banner">

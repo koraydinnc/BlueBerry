@@ -7,10 +7,8 @@ import { Helmet } from "react-helmet";
 import product1 from "../assets/ürünlerimizFoto/1.jpg";
 import product2 from "../assets/ürünlerimizFoto/2.jpg";
 import product3 from "../assets/ürünlerimizFoto/3.jpg";
-import product4 from "../assets/ürünlerimizFoto/4.jpg";
 import product5 from "../assets/ürünlerimizFoto/5.jpg";
-import product6 from "../assets/ürünlerimizFoto/6.jpg";
-
+import LazyLoad from "react-lazyload";
 
 const products = [
   {
@@ -32,33 +30,19 @@ const products = [
     image: product3,
   },
   {
-    title: "Blueberry Çeşitleri",
-    description:
-      "Çiftliğimizde farklı çeşitlerde blueberry üretimi yapılmaktadır. Her çeşit, lezzeti ve besin değerleri ile size farklı bir deneyim sunar.",
-    image: product4,
-  },
-  {
     title: "Doğadan Sofralarınıza",
     description:
       "Blueberrylerimiz doğrudan çiftlikten sofralarınıza ulaşır. Doğal tat ve yüksek besin değeri ile sağlıklı yaşamınıza katkı sağlar.",
     image: product5,
   },
-  {
-    title: "Blueberry Reçelleri",
-    description:
-      "Doğal ve katkısız blueberry reçellerimiz, kahvaltılarınıza eşsiz bir tat katıyor. Her kavanoz, özenle seçilmiş meyveler ve geleneksel yöntemlerle hazırlanmıştır.",
-    image: product6,
-  },
+
 ];
 
 const ProductsPage = () => {
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { staggerChildren: 0.8 } },
   };
-
- 
 
   return (
     <div
@@ -81,7 +65,7 @@ const ProductsPage = () => {
       </Helmet>
 
       <Row justify="center" className="text-center mb-12">
-        <Col xs={24}>
+        <Col xs={24} md={12}>
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -125,61 +109,62 @@ const ProductsPage = () => {
           {products.map((product, index) => (
             <Col xs={24} sm={12} md={12} lg={12} key={index}>
               <motion.div
-             whileInView={{
-              opacity: [ 0, 1],
-              y: [0, -30 , 0],
-            }}
-              transition={{
-                duration: 3,
-                times: [0, 0.5, 1],
-              }}
-              viewport={{ once: false }}
+                whileInView={{
+                  opacity: [0, 1],
+                  y: [0, -20, 1],
+                }}
+                transition={{
+                  duration: 3,
+                  times: [0, 0.8, 1],
+                }}
+                viewport={{ once: false }}
               >
                 <Card
                   cover={
-                    <Image
-                      src={product.image}
-                      alt={product.title}
-                      style={{
-                        height: "50vh",
-                        objectFit: "cover",
-                        borderTopLeftRadius: "12px",
-                        borderTopRightRadius: "12px",
-                      }}
-                      preview={false}
-                    />
+                    <LazyLoad height={500} once>
+                      <Image
+  src={product.image}
+  alt={product.title}
+  style={{
+    width: '100vw',  
+    height: '600px', 
+    objectFit: 'cover',
+  }}
+  preview={false}
+  loading="lazy"
+/>
+
+                    </LazyLoad>
                   }
                   style={{
-                    display: "flex",
+                    width:'100%',
+                    height:'100%'
+,                    display: "flex",
                     flexDirection: "column",
+                    textAlign:'initial',
                     justifyContent: "space-between",
-                    height: "100%",
-                    borderRadius: "12px",
                     backgroundColor: "rgba(17, 34, 64, 0.9)",
-                    color: "#FFF",
+                    color: "black",
                     boxShadow: "0 8px 20px rgba(0, 0, 0, 0.2)",
                   }}
                 >
-                  <Title
-                    className="font-hussar"
-                    level={3}
+                  <h1
+                    className="font-hussar text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl"
                     style={{
                       color: "#1E90FF",
-                      textShadow: "2px 2px 8px rgba(0, 0, 0, 0.3)",
                     }}
                   >
                     {product.title}
-                  </Title>
-                  <Paragraph
-                    className="font-hussar"
+                  </h1>
+                  <h3
+                    className="font-hussar mt-5 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-2xl"
                     style={{
-                      color: "#A9B3C1",
-                      fontSize: "1rem",
-                      lineHeight: "1.8",
+                      lineHeight: "3rem",
+                      color: "#fff",
                     }}
                   >
                     {product.description}
-                  </Paragraph>
+                  </h3>
                 </Card>
               </motion.div>
             </Col>

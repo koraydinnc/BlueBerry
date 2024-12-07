@@ -16,15 +16,15 @@
   width: 100%;
   background: rgba(0, 0, 0, 0.7);
   color: white;
-  max-height: 50px; /* Max height for the content area */
-  overflow: hidden; /* Hide overflowing content */
+  max-height: 250px; 
+  overflow: hidden; 
   padding: 16px;
   box-sizing: border-box;
   transition: max-height 0.3s ease;
 }
 
 .tarif-card-container:hover .overlay {
-  max-height: 400px; /* Expand height on hover */
+  max-height: 400px; 
 }
 
 .overlay p {
@@ -40,8 +40,8 @@
 }
 
 .overlay p.scrollable {
-  overflow-y: auto; /* Scrollable content */
-  max-height: 300px; /* Adjust for scrollable section */
+  overflow-y: auto; 
+  max-height: 300px; 
   scrollbar-width: none;
   scrollbar-color: transparent; /* Custom scrollbar color */
 }

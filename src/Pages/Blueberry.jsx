@@ -1,4 +1,4 @@
-import { Row, Col, Typography, Card } from "antd";
+import { Row, Col, Typography, Card, Image } from "antd";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import blueberry1 from "../assets/Blueberry/blueberry4.jpg";
@@ -14,6 +14,42 @@ const Blueberry = () => {
     visible: { opacity: 1, scale: 1, transition: { duration: 0.8 } },
     hover: { scale: 1.05, boxShadow: "0 8px 20px rgba(0, 0, 0, 0.2)", transition: { duration: 0.3 } },
   };
+
+  const cardData = [
+    {
+      title: "Toprak ve İklim",
+      image: blueberry3,
+      description: (
+        <>
+          <span style={{ color: "#1D6FB5", fontWeight: "bold" }}>Soğutma Süreleri:</span> Yıllık soğutma süreleri blueberrynin aromasını ve raf ömrünü etkiler. Çiftliğimiz 100 gün boyunca -4°C altında iklim koşullarına sahiptir.
+          <br />
+          <span style={{ color: "#1D6FB5", fontWeight: "bold" }}>Organik Tarım:</span> Kimyasal gübre veya sentetik ilaçlar kullanılmaz.
+        </>
+      ),
+    },
+    {
+      title: "Çeşitler ve Hasat",
+      image: blueberry4,
+      description: (
+        <>
+          <span style={{ color: "#1D6FB5", fontWeight: "bold" }}>Türler:</span> Düke, Chandler, Bluegold gibi çeşitler yetiştiriyoruz.
+          <br />
+          <span style={{ color: "#1D6FB5", fontWeight: "bold" }}>Hasat Dönemi:</span> Haziran'dan Eylül'e kadar uzanır.
+        </>
+      ),
+    },
+    {
+      title: "Besin Değeri ve Sağlık",
+      image: blueberry2,
+      description: (
+        <>
+          <span style={{ color: "#1D6FB5", fontWeight: "bold" }}>Besin Değerleri:</span> 1 bardak blueberry, günlük C vitamini ihtiyacının %16'sını karşılar.
+          <br />
+          <span style={{ color: "#1D6FB5", fontWeight: "bold" }}>Kalori:</span> 84 kalori içerir.
+        </>
+      ),
+    },
+  ];
 
   return (
     <div style={{ backgroundColor: "#f8f9fa", fontFamily: "Arial, sans-serif" }} className="font-hussar">
@@ -48,7 +84,7 @@ const Blueberry = () => {
           src={blueberry1}
           alt="Blueberry"
           style={{
-            maxHeight:'50vh',
+            maxHeight: "60vh",
             width: "100%",
             height: "100%",
             objectFit: "cover",
@@ -79,43 +115,10 @@ const Blueberry = () => {
         </div>
       </section>
 
+      {/* Kart Bölümü */}
       <section style={{ padding: "3rem 1rem" }}>
         <Row gutter={[32, 32]} justify="center">
-          {[
-            {
-              title: "Toprak ve İklim",
-              image: blueberry3,
-              description: (
-                <>
-                  <span style={{ color: "#1D6FB5", fontWeight: "bold" }}>Soğutma Süreleri:</span> Yıllık soğutma süreleri blueberrynin aromasını ve raf ömrünü etkiler. Çiftliğimiz 100 gün boyunca -4°C altında iklim koşullarına sahiptir.
-                  <br />
-                  <span style={{ color: "#1D6FB5", fontWeight: "bold" }}>Organik Tarım:</span> Kimyasal gübre veya sentetik ilaçlar kullanılmaz.
-                </>
-              ),
-            },
-            {
-              title: "Çeşitler ve Hasat",
-              image: blueberry4,
-              description: (
-                <>
-                  <span style={{ color: "#1D6FB5", fontWeight: "bold" }}>Türler:</span> Düke, Chandler, Bluegold gibi çeşitler yetiştiriyoruz.
-                  <br />
-                  <span style={{ color: "#1D6FB5", fontWeight: "bold" }}>Hasat Dönemi:</span> Haziran'dan Eylül'e kadar uzanır.
-                </>
-              ),
-            },
-            {
-              title: "Besin Değeri ve Sağlık",
-              image: blueberry2,
-              description: (
-                <>
-                  <span style={{ color: "#1D6FB5", fontWeight: "bold" }}>Besin Değerleri:</span> 1 bardak blueberry, günlük C vitamini ihtiyacının %16'sını karşılar.
-                  <br />
-                  <span style={{ color: "#1D6FB5", fontWeight: "bold" }}>Kalori:</span> 84 kalori içerir.
-                </>
-              ),
-            },
-          ].map(({ title, image, description }, index) => (
+          {cardData.map(({ title, image, description }, index) => (
             <Col key={index} xs={24} md={12} lg={8}>
               <motion.div
                 initial="hidden"
@@ -127,34 +130,41 @@ const Blueberry = () => {
                 <Card
                   hoverable
                   style={{
-                    height:'500px',
+                    height: "500px",
                     borderRadius: "10px",
                     overflow: "hidden",
                     boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
                   }}
-                  cover={<img src={image} alt={title} style={{ height: "200px", objectFit: "cover" }} />}
+                  cover={
+                    <Image
+                      preview={false}
+                      loading="lazy"
+                      src={image}
+                      alt={title}
+                      style={{ height: "200px", objectFit: "cover" }}
+                    />
+                  }
                 >
                   <Title
-  level={3}
-  className="font-hussar"
-  style={{
-    fontSize: "1.5rem",
-    marginBottom: "1.5rem", 
-    color: "#1D6FB5",
-  }}
->
-  {title}
-</Title>
-<span
-  className="font-hussar"
-  style={{
-    fontSize: "1rem",
-    lineHeight: "1.6",
-  }}
->
-  {description}
-</span>
-
+                    level={3}
+                    className="font-hussar"
+                    style={{
+                      fontSize: "1.5rem",
+                      marginBottom: "1.5rem",
+                      color: "#1D6FB5",
+                    }}
+                  >
+                    {title}
+                  </Title>
+                  <span
+                    className="font-hussar"
+                    style={{
+                      fontSize: "1rem",
+                      lineHeight: "1.6",
+                    }}
+                  >
+                    {description}
+                  </span>
                 </Card>
               </motion.div>
             </Col>
@@ -162,6 +172,7 @@ const Blueberry = () => {
         </Row>
       </section>
 
+      {/* Footer */}
       <footer
         style={{
           padding: "2rem 0",
@@ -170,7 +181,9 @@ const Blueberry = () => {
           color: "#fff",
         }}
       >
-        <Paragraph className="font-hussar text-white" style={{ fontSize: "1rem" }}>© 2024 Patika Blueberry</Paragraph>
+        <Paragraph className="font-hussar text-white" style={{ fontSize: "1rem" }}>
+          © 2024 Patika Blueberry
+        </Paragraph>
       </footer>
     </div>
   );
