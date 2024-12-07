@@ -60,28 +60,27 @@ const Faydalari = () => {
         </div>
 
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-full px-4 z-10">
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6 lg:gap-36 lg:ml-14">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-24 lg:gap-36 lg:ml-14">
             {iconData.map((icon, index) => (
               <motion.div
                 key={index}
-                className="flex flex-col items-center text-center"
+                className="flex flex-col items-center text-center "
                 initial={{ opacity: 0, scale: 0.4 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{
-                  delay: index * 0.3,
+                  delay: index * 0.5,
                   duration: 0.4,
                   ease: 'circOut',
                 }}
                 whileHover={{
                   scale: 1.2,
-                  rotate: 1.2,
                   transition: { duration: 0.8 },
                 }}
               >
               <img
                 src={icon.photo}
                 alt={icon.description}
-                className="w-16 h-24 sm:w-20 sm:h-28 md:w-28 md:h-36 lg:w-32 lg:h-48 xl:w-40 xl:h-48"
+                className="w-16 h-32 sm:w-20 sm:h-28 md:w-40 md:h-52 lg:w-32 lg:h-72 xl:w-52"
               />
                 <p className="font-hussar mt-2 text-white text-lg md:text-xl">
                   {icon.description}
@@ -120,19 +119,22 @@ const Faydalari = () => {
           }}
         >
           {textData.map((item, index) => (
-            <motion.div
-              key={index}
-              style={{ marginBottom: '80px' }}
-              initial={{ opacity: 0, x: -100 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{
-                delay: index * 0.3,
-                duration: 0.8,
-                ease: 'backIn',
-              }}
-            >
+             <motion.div
+             key={index}
+             style={{ marginBottom: '80px' }}
+             initial={{ opacity: 0, x: -100 }}
+             whileInView={{
+               opacity: [1, 0, 1],
+               x: [100, 50, 0],
+             }}
+             transition={{
+               duration: 2,
+               times: [0, 0.5, 1],
+             }}
+             viewport={{ once: true }}
+           >
               <h3
-                className="font-hussar text-5xl"
+                className="font-hussar sm:text-2xl md:text-3xl lg:text-5xl"
                 style={{
                   fontWeight: 'bold',
                   color: '#8BC72A',
@@ -141,9 +143,8 @@ const Faydalari = () => {
                 <span>{item.title}</span>
               </h3>
               <h3
-                className="font-hussar"
+                className="font-hussar  sm:text-2xl md:text-3xl lg:text-4xl"
                 style={{
-                  fontSize: '2rem',
                   color: '#1D6FB5',
                   marginTop: '10px',
                 }}

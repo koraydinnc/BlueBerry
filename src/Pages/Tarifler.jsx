@@ -13,46 +13,113 @@ import Cheesecake from '../assets/Chessecake.png';
 import { Col, Row, Image } from 'antd';
 import Title from 'antd/es/typography/Title';
 
+
+
 const tarifData = [
   {
     src: Tarif5,
     titleImage: Smoothie,
     title: 'Smoothie',
-    info: 'Yaban mersini, muz ve süzme yoğurtla hazırlanan ferahlatıcı bir smoothie tarifi.',
+    info: 'Yaban mersini, muz ve süzme yoğurtla hazırlanan ferahlatıcı bir smoothie tarifi',
     recipe: `
-    10-12 adet blueberry, yarım muz, 3 kaşık süzme yoğurt, 3 kaşık yulaf ezmesi, 
-    1/2 çay bardağı süt ve 1 tatlı kaşığı bal ile hazırlayabilirsiniz. 
-    Yaban mersini, muz ve yoğurdu blenderdan geçirip üzerine yulaf ezmesi, süt ve bal ekleyin.`,
+10-12 adet blueberry,
+Yarım muz,
+3 kaşık süzme yoğurt,
+3 kaşık yulaf ezmesi,
+1/2 çay bardağı süt,
+1 tatlı kaşığı bal.
+
+Hazırlık:
+1. Yaban mersini, muz ve yoğurdu blenderdan geçirin.
+2. Karışımı bir kaba alın, üzerine yulaf ezmesi, süt ve bal ekleyerek karıştırın.
+Afiyet olsun!
+    `,
   },
   {
     src: Tarif2,
     titleImage: Muffin,
     title: 'Muffin',
-    info: 'Yumuşacık blueberry muffin tarifi, çayın yanında harika bir eşlikçi.',
+    info: 'Yumuşacık blueberry muffin tarifi, çayın yanında harika bir eşlikçi',
     recipe: `
-    1 bardak blueberry, 2 yumurta, 1 bardak süt, 1 bardak toz şeker, 1/2 bardak sıvı yağ, 
-    2 bardak un, 1 paket vanilya, 1 paket kabartma tozu kullanarak hazırlayabilirsiniz. 
-    200 derecede 30 dakika pişirin.`,
+1 bardak blueberry,
+2 yumurta,
+1 bardak süt,
+1 bardak toz şeker,
+1/2 bardak sıvı yağ,
+2 bardak un,
+1 paket vanilya,
+1 paket kabartma tozu.
+
+Hazırlık:
+1. Yumurta ve toz şekeri çırpın.
+2. Üzerine süt ve sıvı yağı ekleyin.
+3. Un, vanilya ve kabartma tozunu karışıma ekleyin.
+4. Blueberryleri unlayıp karışıma katın.
+5. Muffin kalıplarına doldurun ve 200 derecede 30 dakika pişirin.
+Afiyet olsun!
+    `,
   },
   {
     src: Tarif3,
     titleImage: Cheesecake,
     title: 'Cheesecake',
-    info: 'Blueberry sosuyla süslenmiş enfes cheesecake tarifi.',
+    info: 'Blueberry sosuyla süslenmiş enfes cheesecake tarifi',
     recipe: `
-    Labne, süt kreması, nişasta ve vanilyayla hazırlanır. Üzerine blueberry sos eklenir. 
-    Tabanı için bisküvi, tereyağı ve fındık kullanılır.`,
+1 bardak blueberry
+600gr labne
+3 yumurta
+1 paket süt kreması
+1 paket vanilya
+2.5 kaşık nişasta
+6 kaşık toz şeker
+Taban için;
+200 gr kakaolu bisküvi
+80gr tereyağı
+2 kaşık kırılmış fındık
+Sosu için;
+1 bardak blueberry
+yarım limon suyu
+1.5 çay bardağı su
+2 tatlı kaşığı nişasta
+6 yemek kaşığı toz şeker
+
+Tabanı için bisküvileri robottan geçirip üzerine eritilmiş tereyağı ve fındığı ekleyip karıştıralım. 170 derece fansız fırında pişirelim. 
+Bir kaseye labneyi ekleyelim. Üzerine toz şeker, süt kreması, nişasta ve vanilyayı ekleyip karıştıralım. Yumurtaları kırıp çırpalım. Son olarak leziz yaban mersinlerini ekleyip karıştıralım. 
+
+Hazırlanan karışımı 170 derecede 30-35 dakika pişirelim. 1 gün buzdolabında dinlendirelim
+
+Sosu için; 
+
+Yaban mersinleri, toz şekerini, suyu, nişastayı, limon suyunu ekleyip kaynayana kadar pişirelim. hazırlanan sosu süzgeçten geçirdikten sonra buzdolabındaki hazır kalıbımıza dökelim, afiyet olsun.
+    `,
   },
   {
     src: Tarif4,
     titleImage: Panna,
     title: 'Panna Cotta',
-    info: 'Blueberry ile hazırlanmış hafif bir tatlı: Panna Cotta.',
+    info: 'Blueberry ile hazırlanmış hafif bir tatlı: Panna Cotta',
     recipe: `
-    1 bardak süt, 1 bardak süt kreması, 1/2 çay bardağı toz şeker, 1 paket vanilya ve agar agar kullanılır. 
-    Üzerine blueberry sos eklenir.`,
+Panna Cotta:
+1 bardak süt,
+1 bardak süt kreması,
+1/2 çay bardağı toz şeker,
+1 paket vanilya,
+1 paket agar agar (2 gr).
+
+Sos:
+10-12 adet blueberry,
+1/2 çay bardağı su,
+3 yemek kaşığı toz şeker.
+
+Hazırlık:
+1. Süt, krema, agar agar ve şekeri kaynatın. Vanilyayı ekleyin ve ocaktan alın.
+2. Karışımı kaplara dökün, 4 saat buzdolabında dinlendirin.
+3. Sos için malzemeleri kaynatıp soğutun, panna cotta üzerine dökün.
+Afiyet olsun!
+    `,
   },
 ];
+
 
 const Tarifler = () => {
   return (
@@ -127,39 +194,28 @@ const Tarifler = () => {
         />
       </div>
       <div
-        style={{
-          zIndex: 11,
-          padding: '20px',
-          borderRadius: '8px',
-        }}
-        className="overlay"
-      >
-        <p
-          className="tarif-info font-hussar"
-          style={{
-            marginTop:'54px',
-            fontSize: '16px',
-            color: '#FFF',
-            textAlign: 'center',
-          }}
-        >
-          {tarif.info}
-        </p>
-        <p
-  className="tarif-recipe"
   style={{
-    fontSize: '14px',
-    color: '#FFF',
-    textAlign: 'left',
-    whiteSpace: 'pre-wrap',
-    wordWrap: 'break-word',
-    lineHeight: '1.6',
+    zIndex: 11,
+    padding: '2px',
+    borderRadius: '8px',
   }}
+  className="overlay"
 >
-  {tarif.recipe.replace(/,/g, ',\n')}
-</p>
+  <p
+    className="tarif-info font-hussar"
+    style={{
+      fontSize: '16px',
+      color: '#87C522',
+      textAlign: 'center',
+    }}
+  >
+    {tarif.info}
+  </p>
+  <p className="scrollable font-hussar text-white text-center whitespace-pre-line">
+    {tarif.recipe.trim().replace(/,/g, ',\n')}
+  </p>
+</div>
 
-      </div>
     </div>
   </Col>
 ))}
@@ -170,3 +226,4 @@ const Tarifler = () => {
 };
 
 export default Tarifler;
+

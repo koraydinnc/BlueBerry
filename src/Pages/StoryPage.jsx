@@ -4,10 +4,24 @@ import Fotograf from "../assets/tımelınehıkayearasıfoto.jpg";
 import HikayeBaslik from "../assets/baslık.png";
 import TimelineImage from "../assets/tımelıne.png";
 
+
 const StoryPage = () => {
   const scrollAnimation = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.9 } },
+  };
+
+  const textAnimation = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: (i) => ({
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.8,
+        delay: i * 0.5,
+        ease: "easeOut",
+      },
+    }),
   };
 
   return (
@@ -17,7 +31,7 @@ const StoryPage = () => {
           variants={scrollAnimation}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.8 }}
           className="mb-8 text-center mr-4"
         >
           <img
@@ -31,20 +45,27 @@ const StoryPage = () => {
           variants={scrollAnimation}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.8 }}
           className="mb-12"
         >
-          <Card hoverable className="shadow-lg">
-            <div className="p-4">
-              <p className="text-gray-700 text-lg leading-relaxed font-hussar">
-                • Çiftliğimiz, <span style={{color:'#1D6FB5'}}>1200 metre rakımda</span> yer almakta olup, bu yükseklik bölgeye özgü <span style={{color:'#1D6FB5'}}>ideal iklim koşullarının</span> sağlanmasına yardımcı oluyor. Yüksek rakım, meyvelerimizin aromasını geliştirirken aynı zamanda <span style={{color:'#1D6FB5'}}>daha sağlıklı ve uzun raf ömrüne</span> sahip olmalarını sağlıyor.
-              </p>
-              <p className="text-gray-700 text-lg leading-relaxed mt-4 font-hussar">
-                • Kurulum öncesi, toprak analizleri <span style={{color:'#1D6FB5'}}>Prof. Dr. Aysan Şentürk</span> ve ekibi tarafından titizlikle yapılmıştır. Toprağımızın <span style={{color:'#1D6FB5'}}>organik seviyesi oldukça yüksek</span> olup, pH seviyesi ortalama <span style={{color:'#1D6FB5'}}>4.8-5.2</span> civarındadır. Bu pH aralığı, blueberry için ideal bir ortam sağlar.
-              </p>
-              <p className="text-gray-700 text-lg leading-relaxed mt-4 font-hussar">
-                • Çiftliğimizde her şey doğaya ve çevreye saygı ile yapılmaktadır. <span style={{color:'#1D6FB5'}}>Kimyasal gübreler</span> veya zararlılarla mücadele için sentetik ilaçlar kullanmıyoruz. Tüm yetiştirme sürecimiz, <span style={{color:'#1D6FB5'}}>doğa dostu ve organik yöntemlerle</span> gerçekleştirilir.
-              </p>
+          <Card hoverable className="">
+            <div className="p-4 space-y-4">
+              {[
+                "• Çiftliğimiz, 1200 metre rakımda yer almakta olup, bu yükseklik bölgeye özgü ideal iklim koşullarının sağlanmasına yardımcı oluyor. Yüksek rakım, meyvelerimizin aromasını geliştirirken aynı zamanda daha sağlıklı ve uzun raf ömrüne sahip olmalarını sağlıyor.",
+                "• Kurulum öncesi, toprak analizleri Prof. Dr. Aysan Şentürk ve ekibi tarafından titizlikle yapılmıştır. Toprağımızın organik seviyesi oldukça yüksek olup, pH seviyesi ortalama 4.8-5.2 civarındadır. Bu pH aralığı, blueberry için ideal bir ortam sağlar.",
+                "• Çiftliğimizde her şey doğaya ve çevreye saygı ile yapılmaktadır. Kimyasal gübreler veya zararlılarla mücadele için sentetik ilaçlar kullanmıyoruz. Tüm yetiştirme sürecimiz, doğa dostu ve organik yöntemlerle gerçekleştirilir.",
+              ].map((text, index) => (
+                <motion.p
+                  key={index}
+                  className="text-gray-700 text-lg leading-relaxed font-hussar"
+                  variants={textAnimation}
+                  custom={index}
+                  initial="hidden"
+                  animate="visible"
+                >
+                  {text}
+                </motion.p>
+              ))}
             </div>
           </Card>
         </motion.div>
@@ -53,7 +74,7 @@ const StoryPage = () => {
           variants={scrollAnimation}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.3 }}
           className="mb-12"
         >
           <Image
@@ -67,7 +88,7 @@ const StoryPage = () => {
           variants={scrollAnimation}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.3 }}
         >
           <Image
             src={TimelineImage}

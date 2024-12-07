@@ -25,14 +25,14 @@ const Header = () => {
   );
 
   return (
-    <header className="w-full px-4 py-2 bg-white shadow-md">
+    <header className="w-full px-2 py-2 bg-white shadow-md">
       <Row className="items-center justify-between">
         <Col xs={8} sm={6} md={6} className="flex justify-start cursor-pointer">
           <motion.img
             onClick={() => navigate('/')}
             src={Logo}
             alt="Logo"
-            className="w-24 sm:w-32 md:w-48 p-4"
+            className="w-24 sm:w-28 md:w-48 p-4"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
@@ -44,7 +44,7 @@ const Header = () => {
   overlay={menu}
   trigger={['click']}
   className="sm:hidden"
-  overlayClassName="custom-dropdown" /* CSS sınıfı ile bağlandı */
+  overlayClassName="custom-dropdown" 
 >
   <Button type="text" className="text-[#1D6FB5] font-hussar font-semibold">
     Menü <DownOutlined />

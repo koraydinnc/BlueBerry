@@ -30,7 +30,7 @@ const Blueberry = () => {
           content="Sağlığınızı destekleyen doğal blueberry'lerimizi keşfedin. Doğadan gelen taze lezzetler için doğru adres."
         />
         <meta property="og:image" content={blueberry1} />
-        <meta property="og:url" content="https://www.patikablueberry.com" />
+        <meta property="og:url" content="https://patikablueberrygarden.com/" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Helmet>
 
