@@ -20,6 +20,7 @@
     "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0",
     "react-intersection-observer": "^9.13.1",
+    "react-lazy-load-image-component": "^1.6.2",
     "react-lazyload": "^3.2.1",
     "react-router-dom": "^6.28.0",
     "vite-plugin-million": "^0.0.2"

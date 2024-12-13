@@ -49,18 +49,18 @@ const Faydalari = () => {
         }}
       >
         <div
-          className="absolute z-10 text-center w-full text-white top-10 "
+          className="absolute z-10 text-center w-full text-white top-20 "
         >
-          <h1 className="font-hussar font-bold mt-24  text-4xl md:text-5xl lg:text-6xl">
+          <h1 className="font-hussar font-bold mt-36  text-4xl md:text-5xl lg:text-6xl">
             BLUEBERRY FAYDALARI
           </h1>
           <p className="text-lg mt-2 font-hussar  md:text-lg">
-            Yaban Mersini'nin Sağlığa Olan Muhteşem Etkileriyle Tanışın
+            Yaban Mersininin Sağlığa Olan Muhteşem Etkileriyle Tanışın
           </p>
         </div>
 
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-full px-4 z-10">
-          <div className="flex flex-wrap justify-center gap-4 md:gap-24 lg:gap-36 lg:ml-14">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-24 lg:gap-36 lg:ml-14 xl:gap-52">
             {iconData.map((icon, index) => (
               <motion.div
                 key={index}
@@ -80,7 +80,7 @@ const Faydalari = () => {
               <img
                 src={icon.photo}
                 alt={icon.description}
-                className="w-16 h-32 sm:w-20 sm:h-28 md:w-40 md:h-52 lg:w-32 lg:h-72 xl:w-52"
+                className="w-24 h-32 sm:w-20 sm:h-28 md:w-44 md:h-52 lg:w-32 lg:h-58 xl:w-36 xl:h-54"
               />
                 <p className="font-hussar mt-2 text-white text-lg md:text-xl">
                   {icon.description}

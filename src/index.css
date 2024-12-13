@@ -16,4 +16,15 @@
     font-style: normal;
   }
   
+  @font-face {
+    font-family: 'Mont';
+    font-weight: 400;
+    src: url('/fonts/Mont-Regular.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Mont';
+    font-weight: 700;
+    src: url('/fonts/Mont-Bold.ttf') format('truetype');
+  }
   

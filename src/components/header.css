@@ -10,4 +10,8 @@
     background-color: transparent !important; /* Siyah arka planı kaldırır */
     color: #1D6FB5 !important; /* Mavi renk */
   }
+
+  .text {
+    color:#1D6FB5 !important
+  }
   

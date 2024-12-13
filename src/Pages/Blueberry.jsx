@@ -5,6 +5,7 @@ import blueberry1 from "../assets/Blueberry/blueberry4.jpg";
 import blueberry2 from "../assets/Blueberry/blueberry2.jpg";
 import blueberry3 from "../assets/Blueberry/blueberry3.jpg";
 import blueberry4 from "../assets/Blueberry/mavıalan.jpg";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const { Title, Paragraph } = Typography;
 
@@ -22,7 +23,7 @@ const Blueberry = () => {
       description: (
         <>
           <span style={{ color: "#1D6FB5", fontWeight: "bold" }}>Soğutma Süreleri:</span> Yıllık soğutma süreleri blueberrynin aromasını ve raf ömrünü etkiler. Çiftliğimiz 100 gün boyunca -4°C altında iklim koşullarına sahiptir.
-          <br />
+          <br /><br />
           <span style={{ color: "#1D6FB5", fontWeight: "bold" }}>Organik Tarım:</span> Kimyasal gübre veya sentetik ilaçlar kullanılmaz.
         </>
       ),
@@ -33,8 +34,9 @@ const Blueberry = () => {
       description: (
         <>
           <span style={{ color: "#1D6FB5", fontWeight: "bold" }}>Türler:</span> Düke, Chandler, Bluegold gibi çeşitler yetiştiriyoruz.
-          <br />
+          <br /><br />
           <span style={{ color: "#1D6FB5", fontWeight: "bold" }}>Hasat Dönemi:</span> Haziran'dan Eylül'e kadar uzanır.
+       <br /><br /><br />
         </>
       ),
     },
@@ -44,8 +46,10 @@ const Blueberry = () => {
       description: (
         <>
           <span style={{ color: "#1D6FB5", fontWeight: "bold" }}>Besin Değerleri:</span> 1 bardak blueberry, günlük C vitamini ihtiyacının %16'sını karşılar.
-          <br />
+          <br /><br />
           <span style={{ color: "#1D6FB5", fontWeight: "bold" }}>Kalori:</span> 84 kalori içerir.
+          <br /><br />
+          <br />
         </>
       ),
     },
@@ -80,12 +84,13 @@ const Blueberry = () => {
           alignItems: "center",
         }}
       >
-        <img
+        <LazyLoadImage
+        effect="opacity"
           src={blueberry1}
           alt="Blueberry"
           style={{
             maxHeight: "60vh",
-            width: "100%",
+            width: "100vw",
             height: "100%",
             objectFit: "cover",
             filter: "brightness(50%)",
@@ -115,7 +120,6 @@ const Blueberry = () => {
         </div>
       </section>
 
-      {/* Kart Bölümü */}
       <section style={{ padding: "3rem 1rem" }}>
         <Row gutter={[32, 32]} justify="center">
           {cardData.map(({ title, image, description }, index) => (
@@ -129,8 +133,10 @@ const Blueberry = () => {
               >
                 <Card
                   hoverable
+  
+                  className="flex flex-col text-wrap min-h-full max-h-full"
                   style={{
-                    height: "500px",
+                    height:'55vh',
                     borderRadius: "10px",
                     overflow: "hidden",
                     boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
@@ -141,7 +147,7 @@ const Blueberry = () => {
                       loading="lazy"
                       src={image}
                       alt={title}
-                      style={{ height: "200px", objectFit: "cover" }}
+                      style={{ height: "30vh", objectFit: "cover" }}
                     />
                   }
                 >
@@ -157,10 +163,11 @@ const Blueberry = () => {
                     {title}
                   </Title>
                   <span
-                    className="font-hussar"
+                    className="font-hussar text-balance"
                     style={{
                       fontSize: "1rem",
-                      lineHeight: "1.6",
+                      lineHeight: "1.4",
+                    
                     }}
                   >
                     {description}

@@ -63,7 +63,7 @@ const HomePage = () => {
         y: [0, 100 , 0],
       }}
       transition={{
-        duration: 3,
+        duration: 1,
         times: [0, 0, 1],
       }}
       viewport={{ once: true }}
@@ -116,7 +116,7 @@ const HomePage = () => {
       className="absolute top-1/2 left-0 w-full transform -translate-y-1/2 z-10 text-white"
     >
       <Col span={24} className="text-center mt-4">
-        <Text className="font-semibold font-hussar text-2xl lg:text-4xl px-8 text-white">
+        <Text className="font-semibold font-hussar text-xl lg:text-4xl px-8 text-white">
         </Text>
       </Col>
       {[{ img: Organik, label: "Organik" }, { img: Yerli, label: "Yerli Üretim" }, { img: Saglik, label: "Sağlıklı" }].map((feature, index) => (
@@ -139,12 +139,12 @@ const HomePage = () => {
   <Image
     preview={false}
     src={feature.img}
-    className="max-w-[50px] md:max-w-[100px] lg:max-w-[200px]"
+    className="max-w-[50px] md:max-w-[100px] lg:max-w-[120px] xl:max-w-[160px]"
     alt={feature.label}
   />
 </motion.div>
         
-          <Text className="font-hussar md:text-3xl sm:text-2xl mt-4 lg:text-4xl text-white">
+          <Text className="font-hussar md:text-2xl sm:text-2xl mt-4 lg:text-2xl text-white">
             {feature.label}
           </Text>
           <br /><br />
@@ -159,10 +159,10 @@ const HomePage = () => {
 >
   <Col
     span={24}
-    className="text-center px-8 md:px-8 mt-80 sm:mt-72 lg:mt-32"
+    className="text-center px-8 md:px-8 mt-80 sm:mt-72 lg:mt-24"
   >
     <span
-      className="font-semibold font-hussar text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl"
+      className="font-semibold font-hussar text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-2xl xl:mt-1"
     >
       "75 dekarlık tarlamızda doğal üretim yaban mersini ve birbirinden lezzetli tarifler sizi bekliyor."
     </span>

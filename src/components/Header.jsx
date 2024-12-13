@@ -46,7 +46,7 @@ const Header = () => {
   className="sm:hidden"
   overlayClassName="custom-dropdown" 
 >
-  <Button type="text" className="text-[#1D6FB5] font-hussar font-semibold">
+  <Button type="text" className="text text-[#1D6FB5] hover:text-[#1D6FB5] font-hussar font-semibold">
     Menü <DownOutlined />
   </Button>
 </Dropdown>
@@ -116,6 +116,7 @@ const Header = () => {
           >
 <button
   type="button"
+  onClick={() => navigate('/SiparisVer')}
   className="bg-cover bg-center bg-no-repeat text-white font-hussar font-bold px-4 py-4 rounded-lg hover:brightness-90 sm:px-6 sm:py-3 min-h-[30px] sm:min-w-[150px] sm:h-[50px] min-w-[110px]"
   style={{
     backgroundImage: `url(${ButtonBG})`,

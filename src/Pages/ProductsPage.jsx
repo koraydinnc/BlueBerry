@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet";
 import product1 from "../assets/ürünlerimizFoto/1.jpg";
 import product2 from "../assets/ürünlerimizFoto/2.jpg";
 import product3 from "../assets/ürünlerimizFoto/3.jpg";
-import product5 from "../assets/ürünlerimizFoto/5.jpg";
+import product5 from "../assets/ürünlerimizFoto/4.jpg";
 import LazyLoad from "react-lazyload";
 
 const products = [
@@ -15,7 +15,7 @@ const products = [
     title: "Dondurulmuş Ürünler",
     description:
       "Bir blueberry'nin en önemli özelliklerinden biri, yıllık soğutma süreleri ile doğrudan ilişkili olan aromasının ve raf ömrünün kalitesidir. Bu uzun soğutma süresi, meyvelerimizin hem aromasını hem de besin değerlerini maksimum seviyeye çıkarır.",
-    image: product1,
+    image: product3,
   },
   {
     title: "Taze Ürünler",
@@ -27,26 +27,25 @@ const products = [
     title: "Organik Blueberry",
     description:
       "Organik sertifikalı blueberrylerimiz, hem sağlıklı hem de çevreye duyarlı bir üretim sürecinden geçmektedir. Tüm üretim aşamalarında kalite standartlarına uygun yöntemler uygulanmaktadır.",
-    image: product3,
+    image: product1,
   },
   {
     title: "Doğadan Sofralarınıza",
     description:
-      "Blueberrylerimiz doğrudan çiftlikten sofralarınıza ulaşır. Doğal tat ve yüksek besin değeri ile sağlıklı yaşamınıza katkı sağlar.",
+           "Blueberrylerimiz, güçlü antioksidan özellikleri sayesinde bağışıklık sisteminizi destekler ve günlük enerji ihtiyacınızı doğal bir şekilde karşılar. Doğal lezzetle sağlıklı bir yaşamın keyfini çıkarın!",
     image: product5,
   },
-
 ];
 
 const ProductsPage = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.8 } },
+    visible: { opacity: 1, transition: { staggerChildren: 0.3 } },
   };
 
   return (
     <div
-      className="min-h-screen w-full bg-cover bg-center"
+      className="min-h-screen w-full"
       style={{
         background: "linear-gradient(to bottom, #0a192f, #112240)",
         padding: "50px 20px",
@@ -57,10 +56,6 @@ const ProductsPage = () => {
         <meta
           name="description"
           content="Blueberry ürünlerimizi keşfedin: Doğadan gelen kalite ve lezzet!"
-        />
-        <meta
-          name="keywords"
-          content="blueberry, dondurulmuş ürünler, taze ürünler, organik, doğa dostu"
         />
       </Helmet>
 
@@ -100,67 +95,62 @@ const ProductsPage = () => {
         initial="hidden"
         animate="visible"
       >
-        <Row
-          gutter={[32, 32]}
-          justify="center"
-          className="mb-8 px-4"
-          style={{ display: "flex", alignItems: "stretch" }}
-        >
+        <Row gutter={[32, 32]} justify="center">
           {products.map((product, index) => (
-            <Col xs={24} sm={12} md={12} lg={12} key={index}>
+            <Col xs={24} sm={12} lg={12} key={index}>
               <motion.div
-                whileInView={{
-                  opacity: [0, 1],
-                  y: [0, -20, 1],
-                }}
-                transition={{
-                  duration: 3,
-                  times: [0, 0.8, 1],
-                }}
-                viewport={{ once: false }}
+                whileInView={{ opacity: [0, 1], y: [20, 0] }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
               >
                 <Card
                   cover={
-                    <LazyLoad height={500} once>
+                    <LazyLoad height={200} once>
                       <Image
-  src={product.image}
-  alt={product.title}
-  style={{
-    width: '100vw',  
-    height: '600px', 
-    objectFit: 'cover',
-  }}
-  preview={false}
-  loading="lazy"
-/>
-
+                        src={product.image}
+                        alt={product.title}
+                        style={{
+                          overflow:'hidden',
+                          width: "100vw",
+                          height: "100%",
+                          objectFit: "cover",
+                        }}
+                        preview={false}
+                        loading="lazy"
+                      />
                     </LazyLoad>
                   }
                   style={{
-                    width:'100%',
-                    height:'100%'
-,                    display: "flex",
+                    height: "auto",
+                    display: "flex",
                     flexDirection: "column",
-                    textAlign:'initial',
                     justifyContent: "space-between",
                     backgroundColor: "rgba(17, 34, 64, 0.9)",
-                    color: "black",
+                    color: "white",
                     boxShadow: "0 8px 20px rgba(0, 0, 0, 0.2)",
                   }}
                 >
                   <h1
-                    className="font-hussar text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl"
+                    className="font-hussar text-xl"
                     style={{
                       color: "#1E90FF",
+                      textAlign: "center",
+                      marginBottom: "10px",
                     }}
                   >
                     {product.title}
                   </h1>
                   <h3
-                    className="font-hussar mt-5 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-2xl"
+                    className="font-hussar"
                     style={{
-                      lineHeight: "3rem",
+                      lineHeight: "1.5rem",
                       color: "#fff",
+                      textAlign: "justify",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                      display: "-webkit-box",
+                      WebkitBoxOrient: "vertical",
+                      WebkitLineClamp: 10,
                     }}
                   >
                     {product.description}

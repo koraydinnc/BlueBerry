@@ -6,8 +6,8 @@ import TimelineImage from "../assets/tımelıne.png";
 import { Helmet } from "react-helmet";
 import LazyLoad from "react-lazyload";
 import React, { memo } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
-// Animasyon ve Reusable Bileşenler
 const fadeInVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
@@ -43,14 +43,14 @@ const AnimatedBlock = ({ children }) => (
 const StoryPage = () => (
   <div className="bg-gray-50 py-8 px-4">
     <StaticHelmet />
-    <div className="max-w-5xl mx-auto">
-      {/* Başlık */}
+    <div className="max-w-5xl mx-auto mb-12">
       <AnimatedBlock>
-        <LazyLoad height={100} once>
-          <img
+        <LazyLoad height={100} className="flex justify-center " once>
+          <LazyLoadImage
+          effect="black-and-white"
             src={HikayeBaslik}
             alt="Hikaye Başlığı"
-            className="mx-auto object-cover max-w-xs"
+            className="mx-auto object-cover mb-8 max-w-xs"
           />
         </LazyLoad>
       </AnimatedBlock>
@@ -82,16 +82,16 @@ const StoryPage = () => (
 <br />
 <br /><br /><br />
       <AnimatedBlock>
-        <Image src={Fotograf} alt="Hikaye Arası Fotoğraf" className="rounded-lg shadow-lg" />
+        <LazyLoadImage effect="black-and-white" src={Fotograf} alt="Hikaye Arası Fotoğraf" className="rounded-lg" />
       </AnimatedBlock>
  <br /><br /><br />
       <AnimatedBlock>
-        <LazyLoad height={500} once placeholder={<div className="h-80 bg-gray-200" />}>
+        <LazyLoad height={500} once placeholder={<div className="h-80" />}>
           <Image
             src={TimelineImage}
             preview={false}
             alt="Patika'nın Hikayesi"
-            className="object-cover rounded-lg shadow-lg"
+            className="object-cover rounded-lg"
           />
         </LazyLoad>
       </AnimatedBlock>

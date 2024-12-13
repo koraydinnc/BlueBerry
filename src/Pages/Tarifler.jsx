@@ -1,10 +1,10 @@
 import React from 'react';
 import './tarifler.css';
 import Tarif1 from '../assets/Tarifler/tarif2.jpg';
-import Tarif2 from '../assets/Tarifler/tarif1.jpg';
-import Tarif3 from '../assets/Tarifler/tarif3.jpg';
-import Tarif4 from '../assets/Tarifler/tarif5.jpg';
-import Tarif5 from '../assets/Tarifler/tasrif4.jpg';
+import Tarif2 from '../assets/Tarifler/MUFFIN.jpg';
+import Tarif3 from '../assets/Tarifler/CHEESCAKE.jpg';
+import Tarif4 from '../assets/Tarifler/PANNA.jpg';
+import Tarif5 from '../assets/Tarifler/SMOOTHIE.jpg';
 import Muffin from '../assets/Muffin.png';
 import Panna from '../assets/PannaCotta.png';
 import Smoothie from '../assets/Smoothie.png';
@@ -13,6 +13,8 @@ import Cheesecake from '../assets/Chessecake.png';
 import { Col, Row, Image } from 'antd';
 import Title from 'antd/es/typography/Title';
 import { Helmet } from 'react-helmet';
+import LazyLoad from 'react-lazyload';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 
 
@@ -137,7 +139,7 @@ const Tarifler = () => {
       </Helmet>
 
       <Row className="tarifler-container" gutter={[16, 16]}>
-        <Col xs={24} className="relative top-banner">
+        <Col xs={24} className="relative top-banner ">
           <Image
             style={{ width: '100vw', height: '50vh', objectFit: 'cover' }}
             src={Tarif1}
@@ -163,29 +165,33 @@ const Tarifler = () => {
         </Col >
         {tarifData.map((tarif, index) => (
   <Col xs={24} sm={24} md={12} lg={12} key={index}>
-    <div className="tarif-card-container relative">
-      <Image
-        className="image-full"
-        src={tarif.src}
-        alt={`${tarif.title} Tarifi`}
-        preview={false}
-        style={{
-          width: '100vw',
-          height: '50vh',
-          objectFit: 'cover',
-          borderRadius: '8px',
-        }}
-      />
-      <div className="text-center">
+    <div className="tarif-card-container relative ">
+      <LazyLoadImage   
+         className="image-full"
+         src={tarif.src}
+         effect='black-and-white'
+         alt={`${tarif.title} Tarifi`}
+         preview={false}
+         style={{
+           width: '100vw',
+           height: '50vh',
+           objectFit: 'cover',
+           borderRadius: '8px',
+         }}
+      >
+       
+      </LazyLoadImage>
+       
+            <div className="text-center ">
         <img
-          className="title-image absolute"
+          className="title-image absolute "
           src={tarif.titleImage}
           alt={tarif.title}
           style={{
-            top: '100px',
+            top: '150px',
             left: '50%',
             transform: 'translateX(-50%) translateY(50%)',
-            width: '120px',
+            width: '200px',
             height: 'auto',
             zIndex: 10,
           }}

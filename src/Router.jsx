@@ -1,6 +1,7 @@
 import Blueberry from "./Pages/Blueberry";
 import Faydalari from "./Pages/Faydalari";
 import HomePage from "./Pages/HomePage";
+import OrderPage from "./Pages/OrderPage";
 import ProductsPage from "./Pages/ProductsPage";
 import StoryPage from "./Pages/StoryPage";
 import Tarifler from "./Pages/Tarifler";
@@ -36,5 +37,10 @@ export const MainRouter = [
         component: StoryPage,
         exact:true
     },
+    {
+        path:'/SiparisVer',
+        component:OrderPage,
+        exact:true
+    }
 
 ]
